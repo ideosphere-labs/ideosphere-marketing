@@ -3,97 +3,104 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Microscope, Zap, Trophy } from "lucide-react";
 
-// Neural network background animation
-const NetworkBackground = () => {
+// Scientific background animation
+const BackgroundAnimation = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       <div className="absolute w-full h-full opacity-20">
-        <svg className="w-full h-full" viewBox="0 0 100 100">
-          {[...Array(12)].map((_, i) => (
+        {/* DNA Helix */}
+        <svg className="absolute w-full h-full" viewBox="0 0 100 100">
+          {[...Array(10)].map((_, i) => (
+            <g key={`helix-${i}`} className="animate-float" style={{ animationDelay: `${i * 0.2}s` }}>
+              <path
+                d={`M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}`}
+                className="text-cyan-500"
+                stroke="currentColor"
+                strokeWidth="0.2"
+                fill="none"
+              >
+                <animate
+                  attributeName="d"
+                  dur="10s"
+                  repeatCount="indefinite"
+                  values={`
+                    M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20};
+                    M ${10 + (i * 8)} ${20 + Math.cos(i) * 20} Q ${20 + (i * 8)} ${40 + Math.sin(i) * 20} ${30 + (i * 8)} ${60 + Math.cos(i) * 20};
+                    M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}
+                  `}
+                />
+              </path>
+              <circle
+                r="0.5"
+                className="text-blue-400"
+                fill="currentColor"
+              >
+                <animateMotion
+                  dur={`${8 + i * 0.5}s`}
+                  repeatCount="indefinite"
+                  path={`M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}`}
+                />
+              </circle>
+            </g>
+          ))}
+        </svg>
+
+        {/* Floating Particles */}
+        <svg className="absolute w-full h-full" viewBox="0 0 100 100">
+          {[...Array(20)].map((_, i) => (
             <circle
-              key={`node-${i}`}
-              cx={20 + (i % 4) * 20}
-              cy={20 + Math.floor(i / 4) * 30}
-              r="1"
-              className="text-cyan-500"
+              key={`particle-${i}`}
+              cx={Math.random() * 100}
+              cy={Math.random() * 100}
+              r={0.3 + Math.random() * 0.5}
+              className="text-cyan-400"
               fill="currentColor"
             >
               <animate
                 attributeName="opacity"
-                dur={`${2 + i * 0.5}s`}
-                values="0.2;1;0.2"
+                dur={`${3 + Math.random() * 2}s`}
+                values="0;1;0"
                 repeatCount="indefinite"
+                begin={`${Math.random() * 2}s`}
+              />
+              <animate
+                attributeName="cy"
+                dur={`${10 + Math.random() * 5}s`}
+                values={`${Math.random() * 100};${Math.random() * 100}`}
+                repeatCount="indefinite"
+                begin={`${Math.random() * 2}s`}
               />
             </circle>
           ))}
-          {[...Array(20)].map((_, i) => {
-            const startNode = i % 12;
-            const endNode = (startNode + 3 + i % 4) % 12;
-            const startX = 20 + (startNode % 4) * 20;
-            const startY = 20 + Math.floor(startNode / 4) * 30;
-            const endX = 20 + (endNode % 4) * 20;
-            const endY = 20 + Math.floor(endNode / 4) * 30;
-            
-            return (
-              <g key={`connection-${i}`}>
-                <line
-                  x1={startX}
-                  y1={startY}
-                  x2={endX}
-                  y2={endY}
-                  className="text-cyan-500"
-                  stroke="currentColor"
-                  strokeWidth="0.2"
-                  opacity="0.3"
-                >
-                  <animate
-                    attributeName="opacity"
-                    dur={`${3 + i * 0.2}s`}
-                    values="0.1;0.4;0.1"
-                    repeatCount="indefinite"
-                  />
-                </line>
-                <circle
-                  r="0.5"
-                  className="text-cyan-400"
-                  fill="currentColor"
-                >
-                  <animateMotion
-                    dur={`${4 + i * 0.5}s`}
-                    repeatCount="indefinite"
-                    path={`M${startX},${startY} L${endX},${endY}`}
-                  />
-                </circle>
-              </g>
-            );
-          })}
         </svg>
       </div>
     </div>
   );
 };
 
-// Feature card component
+// Enhanced Feature card component with more animations
 const FeatureCard = ({ title, description, icon: Icon }) => (
-  <div className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 p-8 hover:border-cyan-500/50 transition-all duration-300">
+  <div className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 p-8 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1">
     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     <div className="relative z-10">
-      <div className="rounded-full w-12 h-12 bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center mb-6">
-        <Icon className="w-6 h-6 text-cyan-400" />
+      <div className="rounded-full w-12 h-12 bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+        <Icon className="w-6 h-6 text-cyan-400 group-hover:rotate-12 transition-transform duration-300" />
       </div>
-      <h3 className="text-xl font-semibold text-white mb-4">{title}</h3>
-      <p className="text-slate-400 leading-relaxed">{description}</p>
+      <h3 className="text-xl font-semibold text-white mb-4 group-hover:translate-x-1 transition-transform duration-300">{title}</h3>
+      <p className="text-slate-400 leading-relaxed transform transition-all duration-300 group-hover:text-slate-300">{description}</p>
     </div>
   </div>
 );
 
-// FAQ Component
+// Enhanced FAQ Component with smooth expansion
 const FAQ = ({ question }) => (
   <div className="group cursor-pointer">
-    <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 p-6 hover:border-cyan-500/50 transition-all duration-300">
+    <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 p-6 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative z-10 flex items-center justify-between">
-        <h3 className="text-lg text-white">{question}</h3>
+        <h3 className="text-lg text-white group-hover:translate-x-1 transition-transform duration-300">{question}</h3>
         <Network className="w-5 h-5 text-cyan-400 group-hover:rotate-90 transition-transform duration-300" />
       </div>
     </div>

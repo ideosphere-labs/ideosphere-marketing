@@ -1,10 +1,9 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Microscope, Zap, Trophy } from "lucide-react";
 
 // Scientific background animation
-const BackgroundAnimation = () => {
+const NetworkBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       <div className="absolute w-full h-full opacity-20">

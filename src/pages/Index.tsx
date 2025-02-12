@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Microscope, Zap, Trophy, ChevronDown } from "lucide-react";
@@ -305,7 +306,13 @@ const Index = () => {
             />
             <FAQ 
               question="How do you ensure the validity of research outcomes?" 
-              answer="Research outcomes are verified through a rigorous validation process that includes peer review, independent verification, and clear, predefined success criteria. We work with established research institutions and independent experts to ensure the integrity and accuracy of outcome determinations."
+              answer="We use an optimistic oracle system where researchers submit their findings which can then be challenged by domain experts. Here's how it works:
+
+1. Researchers submit their scientific claims
+2. A dispute period follows where experts can verify or challenge the findings
+3. Financial incentives encourage accurate reporting (rewards) and discourage false claims (penalties)
+
+This creates a transparent system where the scientific community's expertise, combined with economic incentives, ensures reliable verification of research outcomes."
             />
             <FAQ 
               question="How do researchers submit projects and what research areas do you support?" 

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Network, Microscope, Zap, Trophy } from "lucide-react";
+import { ArrowRight, Network, Microscope, Zap, Trophy, ChevronDown } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 // Scientific background animation
 const NetworkBackground = () => {
@@ -92,20 +93,6 @@ const FeatureCard = ({ title, description, icon: Icon }) => (
   </div>
 );
 
-// Enhanced FAQ Component with smooth expansion
-const FAQ = ({ question }) => (
-  <div className="group cursor-pointer">
-    <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 p-6 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="relative z-10 flex items-center justify-between">
-        <h3 className="text-lg text-white group-hover:translate-x-1 transition-transform duration-300">{question}</h3>
-        <Network className="w-5 h-5 text-cyan-400 group-hover:rotate-90 transition-transform duration-300" />
-      </div>
-    </div>
-  </div>
-);
-
 // Enhanced Trader Feature Card
 const TraderFeatureCard = ({ icon: Icon, title, description }) => (
   <div className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 p-8 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1">
@@ -119,6 +106,29 @@ const TraderFeatureCard = ({ icon: Icon, title, description }) => (
       <p className="text-slate-400 leading-relaxed transform transition-all duration-300 group-hover:text-slate-300">{description}</p>
     </div>
   </div>
+);
+
+// Enhanced FAQ Component with expansion
+const FAQ = ({ question, answer }) => (
+  <Collapsible className="group">
+    <CollapsibleTrigger className="w-full">
+      <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 p-6 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="relative z-10 flex items-center justify-between">
+          <h3 className="text-lg text-white group-hover:translate-x-1 transition-transform duration-300">{question}</h3>
+          <ChevronDown className="w-5 h-5 text-cyan-400 transform transition-transform duration-300 group-data-[state=open]:rotate-180" />
+        </div>
+      </div>
+    </CollapsibleTrigger>
+    <CollapsibleContent>
+      <div className="overflow-hidden">
+        <div className="p-6 text-slate-300 bg-slate-800/50 rounded-b-xl border-x border-b border-slate-800/50">
+          {answer}
+        </div>
+      </div>
+    </CollapsibleContent>
+  </Collapsible>
 );
 
 const Index = () => {
@@ -285,10 +295,22 @@ const Index = () => {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold mb-12">FAQ</h2>
           <div className="space-y-4">
-            <FAQ question="What is Ideosphere and how does it work?" />
-            <FAQ question="How do researchers receive funding through prediction markets?" />
-            <FAQ question="How do you ensure the validity of research outcomes?" />
-            <FAQ question="How do researchers submit projects and what research areas do you support?" />
+            <FAQ 
+              question="What is Ideosphere and how does it work?" 
+              answer="Ideosphere is a pioneering platform that connects scientific research with prediction markets. It allows traders to bet on research outcomes while simultaneously providing funding for researchers. The platform creates a unique ecosystem where market forces help drive scientific progress."
+            />
+            <FAQ 
+              question="How do researchers receive funding through prediction markets?" 
+              answer="Researchers receive funding through a percentage of trading fees and market activity on their research predictions. Every time traders place bets or provide liquidity for research outcomes, a portion of those transactions goes directly to funding the research project. This creates a continuous funding stream based on market interest."
+            />
+            <FAQ 
+              question="How do you ensure the validity of research outcomes?" 
+              answer="Research outcomes are verified through a rigorous validation process that includes peer review, independent verification, and clear, predefined success criteria. We work with established research institutions and independent experts to ensure the integrity and accuracy of outcome determinations."
+            />
+            <FAQ 
+              question="How do researchers submit projects and what research areas do you support?" 
+              answer="Researchers can submit their projects through our online portal after creating an account. We support a wide range of research areas including life sciences, physics, chemistry, and computer science. Each submission undergoes a review process to ensure it meets our criteria for market creation, including clear outcome metrics and timeline feasibility."
+            />
           </div>
           <div className="mt-16 text-center">
             <h3 className="text-2xl font-bold mb-4">Still have questions?</h3>

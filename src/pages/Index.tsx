@@ -106,6 +106,21 @@ const FAQ = ({ question }) => (
   </div>
 );
 
+// Enhanced Trader Feature Card
+const TraderFeatureCard = ({ icon: Icon, title, description }) => (
+  <div className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 p-8 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1">
+    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="relative z-10">
+      <div className="rounded-full w-12 h-12 bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+        <Icon className="w-6 h-6 text-cyan-400 group-hover:rotate-12 transition-transform duration-300" />
+      </div>
+      <h3 className="text-xl font-semibold text-white mb-4 group-hover:translate-x-1 transition-transform duration-300">{title}</h3>
+      <p className="text-slate-400 leading-relaxed transform transition-all duration-300 group-hover:text-slate-300">{description}</p>
+    </div>
+  </div>
+);
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
@@ -186,44 +201,75 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Traders Section */}
+      {/* Enhanced Traders Section */}
       <section className="relative py-24 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-8">For Traders</h2>
-          <p className="text-xl text-slate-300 mb-12 max-w-3xl">
-            Participate in the future of scientific funding through prediction markets. 
-            Your trading activity generates direct funding for researchers while giving you 
-            the opportunity to profit from successful predictions.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Zap,
-                text: "Fuel pioneering research"
-              },
-              {
-                icon: Network,
-                text: "Bet on research outcomes"
-              },
-              {
-                icon: Trophy,
-                text: "Profit on scientific progress"
-              },
-              {
-                icon: Microscope,
-                text: "Disrupt the funding paradigm"
-              }
-            ].map(({ icon: Icon, text }, i) => (
-              <div key={i} className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 p-6 hover:border-cyan-500/50 transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative z-10 flex flex-col items-center text-center">
-                  <Icon className="w-6 h-6 text-cyan-400 mb-4" />
-                  <span className="text-sm font-medium">{text}</span>
-                </div>
-              </div>
-            ))}
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-4xl font-bold mb-8">For Traders</h2>
+            <p className="text-xl text-slate-300 mb-6">
+              Ideosphere connects traders to emerging science through prediction markets. Join a community exploring research outcomes, get direct access to project updates, and participate in a new model for funding science.
+            </p>
+            <p className="text-slate-400">
+              Traditional grant funding wastes $28B annually on abandoned research, with researchers spending 44% of their time chasing grants. Your market participation creates a more efficient funding mechanism.
+            </p>
           </div>
-          <div className="mt-12 flex justify-center">
+
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <TraderFeatureCard
+              icon={Zap}
+              title="Provide liquidity to fuel pioneering research"
+              description="Bootstrap promising research markets as a liquidity provider. Face capped losses while accessing unlimited upside potential on breakthrough discoveries. Your participation helps create deep, efficient markets for scientific predictions."
+            />
+            <TraderFeatureCard
+              icon={Network}
+              title="Bet on research outcomes"
+              description="Take positions on scientific hypotheses and research milestones. Your trading activity generates direct funding for researchers while giving you the opportunity to profit from successful predictions. Access unique alpha in the scientific domain."
+            />
+            <TraderFeatureCard
+              icon={Trophy}
+              title="Profit on scientific progress"
+              description="Contribute to price discovery while generating immediate cash flow for researchers. Access project updates directly from research teams to inform your trading decisions and maximize returns. Build a portfolio of scientific predictions."
+            />
+            <TraderFeatureCard
+              icon={Microscope}
+              title="Disrupt the funding paradigm"
+              description="Help revolutionize how science gets funded. Traditional funding methods are inefficient and slow. Your market participation creates a more dynamic funding mechanism that lets researchers focus on breakthroughs instead of grant applications."
+            />
+          </div>
+
+          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 rounded-xl p-8 mb-12">
+            <h3 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+              Benefits for Traders
+            </h3>
+            <ul className="grid md:grid-cols-2 gap-6">
+              <li className="flex items-start space-x-3">
+                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
+                  <Network className="w-5 h-5" />
+                </div>
+                <span className="text-slate-300">Direct access to research teams</span>
+              </li>
+              <li className="flex items-start space-x-3">
+                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
+                  <Network className="w-5 h-5" />
+                </div>
+                <span className="text-slate-300">Early access to research findings</span>
+              </li>
+              <li className="flex items-start space-x-3">
+                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
+                  <Network className="w-5 h-5" />
+                </div>
+                <span className="text-slate-300">Capped downside, unlimited upside</span>
+              </li>
+              <li className="flex items-start space-x-3">
+                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
+                  <Network className="w-5 h-5" />
+                </div>
+                <span className="text-slate-300">Community of scientific traders</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="flex justify-center">
             <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
               <span className="relative z-10 flex items-center">
                 Join as trader

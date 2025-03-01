@@ -3,128 +3,73 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Microscope, Zap, Trophy, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-
-// Scientific background animation
-const NetworkBackground = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute w-full h-full opacity-20">
-        {/* DNA Helix */}
-        <svg className="absolute w-full h-full" viewBox="0 0 100 100">
-          {[...Array(10)].map((_, i) => (
-            <g key={`helix-${i}`} className="animate-float" style={{ animationDelay: `${i * 0.2}s` }}>
-              <path
-                d={`M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}`}
-                className="text-cyan-500"
-                stroke="currentColor"
-                strokeWidth="0.2"
-                fill="none"
-              >
-                <animate
-                  attributeName="d"
-                  dur="10s"
-                  repeatCount="indefinite"
-                  values={`
-                    M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20};
-                    M ${10 + (i * 8)} ${20 + Math.cos(i) * 20} Q ${20 + (i * 8)} ${40 + Math.sin(i) * 20} ${30 + (i * 8)} ${60 + Math.cos(i) * 20};
-                    M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}
-                  `}
-                />
-              </path>
-              <circle
-                r="0.5"
-                className="text-blue-400"
-                fill="currentColor"
-              >
-                <animateMotion
-                  dur={`${8 + i * 0.5}s`}
-                  repeatCount="indefinite"
-                  path={`M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}`}
-                />
-              </circle>
-            </g>
-          ))}
-        </svg>
-
-        {/* Floating Particles */}
-        <svg className="absolute w-full h-full" viewBox="0 0 100 100">
-          {[...Array(20)].map((_, i) => (
-            <circle
-              key={`particle-${i}`}
-              cx={Math.random() * 100}
-              cy={Math.random() * 100}
-              r={0.3 + Math.random() * 0.5}
-              className="text-cyan-400"
-              fill="currentColor"
-            >
-              <animate
-                attributeName="opacity"
-                dur={`${3 + Math.random() * 2}s`}
-                values="0;1;0"
-                repeatCount="indefinite"
-                begin={`${Math.random() * 2}s`}
-              />
-              <animate
-                attributeName="cy"
-                dur={`${10 + Math.random() * 5}s`}
-                values={`${Math.random() * 100};${Math.random() * 100}`}
-                repeatCount="indefinite"
-                begin={`${Math.random() * 2}s`}
-              />
-            </circle>
-          ))}
-        </svg>
-      </div>
-    </div>
-  );
-};
+import { HeroSection } from "@/components/blocks/hero-section";
+import { motion } from "framer-motion";
 
 // Enhanced Feature card component with more animations
 const FeatureCard = ({ title, description, icon: Icon }) => (
-  <div className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 p-8 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1">
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    viewport={{ once: true }}
+    className="group relative overflow-hidden rounded-xl glass-effect neo-morphism p-8 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1"
+  >
     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     <div className="relative z-10">
-      <div className="rounded-full w-12 h-12 bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+      <div className="rounded-full w-12 h-12 glass-effect border border-slate-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
         <Icon className="w-6 h-6 text-cyan-400 group-hover:rotate-12 transition-transform duration-300" />
       </div>
       <h3 className="text-xl font-semibold text-white mb-4 group-hover:translate-x-1 transition-transform duration-300">{title}</h3>
       <p className="text-slate-400 leading-relaxed transform transition-all duration-300 group-hover:text-slate-300">{description}</p>
     </div>
-  </div>
+  </motion.div>
 );
 
 // Enhanced Trader Feature Card
 const TraderFeatureCard = ({ icon: Icon, title, description }) => (
-  <div className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 p-8 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1">
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    viewport={{ once: true }}
+    className="group relative overflow-hidden rounded-xl glass-effect neo-morphism p-8 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1"
+  >
     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     <div className="relative z-10">
-      <div className="rounded-full w-12 h-12 bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+      <div className="rounded-full w-12 h-12 glass-effect border border-slate-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
         <Icon className="w-6 h-6 text-cyan-400 group-hover:rotate-12 transition-transform duration-300" />
       </div>
       <h3 className="text-xl font-semibold text-white mb-4 group-hover:translate-x-1 transition-transform duration-300">{title}</h3>
       <p className="text-slate-400 leading-relaxed transform transition-all duration-300 group-hover:text-slate-300">{description}</p>
     </div>
-  </div>
+  </motion.div>
 );
 
 // Enhanced FAQ Component with expansion
 const FAQ = ({ question, answer }) => (
   <Collapsible className="group">
     <CollapsibleTrigger className="w-full">
-      <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 p-6 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="relative overflow-hidden rounded-xl glass-effect neo-morphism p-6 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10"
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="relative z-10 flex items-center justify-between">
           <h3 className="text-lg text-white group-hover:translate-x-1 transition-transform duration-300">{question}</h3>
           <ChevronDown className="w-5 h-5 text-cyan-400 transform transition-transform duration-300 group-data-[state=open]:rotate-180" />
         </div>
-      </div>
+      </motion.div>
     </CollapsibleTrigger>
     <CollapsibleContent>
       <div className="overflow-hidden">
-        <div className="p-6 text-slate-300 bg-slate-800/50 rounded-b-xl border-x border-b border-slate-800/50">
+        <div className="p-6 text-slate-300 glass-effect border-x border-b border-slate-800/50 rounded-b-xl">
           {answer}
         </div>
       </div>
@@ -150,45 +95,35 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 flex items-center justify-center min-h-screen">
-        <NetworkBackground />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center text-center">
-            <div className="inline-flex px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-sm font-medium mb-12 animate-fade-in">
-              Access Now Open
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-[1.1] animate-fade-up">
-              Bet on the future of
-              <br />
-              <span className="relative inline-block">
-                <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                  science
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-xl transform -rotate-2"></div>
-              </span>
-            </h1>
-            
-            <p className="text-xl text-slate-300 mb-10 max-w-2xl animate-fade-up">
-              Ideosphere harnesses the power of prediction markets to fund research
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-20 animate-fade-up">
-              <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
-                <span className="relative z-10 flex items-center">
-                  Join the waitlist
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        title="Bet on the future of"
+        subtitle={{
+          regular: "",
+          gradient: "science",
+        }}
+        description="Ideosphere harnesses the power of prediction markets to fund research"
+        ctaText="Join the waitlist"
+        ctaHref="#"
+        gridOptions={{
+          angle: 65,
+          opacity: 0.4,
+          cellSize: 40,
+          lineColor: "rgba(6, 182, 212, 0.1)",
+        }}
+      />
 
       {/* Researchers Section */}
       <section className="relative py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-12">For Researchers</h2>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold mb-12"
+          >
+            For Researchers
+          </motion.h2>
           <div className="grid md:grid-cols-2 gap-8">
             <FeatureCard
               icon={Microscope}
@@ -216,13 +151,33 @@ const Index = () => {
       <section className="relative py-24 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <h2 className="text-4xl font-bold mb-8">For Traders</h2>
-            <p className="text-xl text-slate-300 mb-6">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-4xl font-bold mb-8"
+            >
+              For Traders
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-xl text-slate-300 mb-6"
+            >
               Ideosphere connects traders to emerging science through prediction markets. Join a community exploring research outcomes, get direct access to project updates, and participate in a new model for funding science.
-            </p>
-            <p className="text-slate-400">
+            </motion.p>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-slate-400"
+            >
               Traditional grant funding wastes $28B annually on abandoned research, with researchers spending 44% of their time chasing grants. Your market participation creates a more efficient funding mechanism.
-            </p>
+            </motion.p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -248,7 +203,13 @@ const Index = () => {
             />
           </div>
 
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 rounded-xl p-8 mb-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="glass-effect neo-morphism rounded-xl p-8 mb-12"
+          >
             <h3 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
               Benefits for Traders
             </h3>
@@ -278,7 +239,7 @@ const Index = () => {
                 <span className="text-slate-300">Community of scientific traders</span>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
           <div className="flex justify-center">
             <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
@@ -294,7 +255,15 @@ const Index = () => {
       {/* FAQ Section */}
       <section className="relative py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-12">FAQ</h2>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold mb-12"
+          >
+            FAQ
+          </motion.h2>
           <div className="space-y-4">
             <FAQ 
               question="What is Ideosphere and how does it work?" 
@@ -319,7 +288,13 @@ This creates a transparent system where the scientific community's expertise, co
               answer="Researchers can submit their projects through our online portal after creating an account. We support a wide range of research areas including life sciences, physics, chemistry, and computer science. Each submission undergoes a review process to ensure it meets our criteria for market creation, including clear outcome metrics and timeline feasibility."
             />
           </div>
-          <div className="mt-16 text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="mt-16 text-center"
+          >
             <h3 className="text-2xl font-bold mb-4">Still have questions?</h3>
             <p className="text-slate-400">
               Can't find the answer you're looking for? Please reach to our friendly team at{' '}
@@ -327,7 +302,7 @@ This creates a transparent system where the scientific community's expertise, co
                 mariana@ideosphere.io
               </a>
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 

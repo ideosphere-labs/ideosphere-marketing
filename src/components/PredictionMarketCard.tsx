@@ -96,7 +96,7 @@ export function PredictionMarketCard() {
         </div>
       </PinContainer>
 
-      <style global>{`
+      <style jsx>{`
         @keyframes wave {
           0%, 100% {
             transform: translateX(0);

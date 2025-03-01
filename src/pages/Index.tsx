@@ -1,84 +1,8 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Microscope, Zap, Trophy, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { PredictionMarketCard } from "@/components/PredictionMarketCard";
-
-// Scientific background animation
-const NetworkBackground = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute w-full h-full opacity-20">
-        {/* DNA Helix */}
-        <svg className="absolute w-full h-full" viewBox="0 0 100 100">
-          {[...Array(10)].map((_, i) => (
-            <g key={`helix-${i}`} className="animate-float" style={{ animationDelay: `${i * 0.2}s` }}>
-              <path
-                d={`M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}`}
-                className="text-cyan-500"
-                stroke="currentColor"
-                strokeWidth="0.2"
-                fill="none"
-              >
-                <animate
-                  attributeName="d"
-                  dur="10s"
-                  repeatCount="indefinite"
-                  values={`
-                    M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20};
-                    M ${10 + (i * 8)} ${20 + Math.cos(i) * 20} Q ${20 + (i * 8)} ${40 + Math.sin(i) * 20} ${30 + (i * 8)} ${60 + Math.cos(i) * 20};
-                    M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}
-                  `}
-                />
-              </path>
-              <circle
-                r="0.5"
-                className="text-blue-400"
-                fill="currentColor"
-              >
-                <animateMotion
-                  dur={`${8 + i * 0.5}s`}
-                  repeatCount="indefinite"
-                  path={`M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}`}
-                />
-              </circle>
-            </g>
-          ))}
-        </svg>
-
-        {/* Floating Particles */}
-        <svg className="absolute w-full h-full" viewBox="0 0 100 100">
-          {[...Array(20)].map((_, i) => (
-            <circle
-              key={`particle-${i}`}
-              cx={Math.random() * 100}
-              cy={Math.random() * 100}
-              r={0.3 + Math.random() * 0.5}
-              className="text-cyan-400"
-              fill="currentColor"
-            >
-              <animate
-                attributeName="opacity"
-                dur={`${3 + Math.random() * 2}s`}
-                values="0;1;0"
-                repeatCount="indefinite"
-                begin={`${Math.random() * 2}s`}
-              />
-              <animate
-                attributeName="cy"
-                dur={`${10 + Math.random() * 5}s`}
-                values={`${Math.random() * 100};${Math.random() * 100}`}
-                repeatCount="indefinite"
-                begin={`${Math.random() * 2}s`}
-              />
-            </circle>
-          ))}
-        </svg>
-      </div>
-    </div>
-  );
-};
 
 // Enhanced Feature card component with more animations
 const FeatureCard = ({ title, description, icon: Icon }) => (
@@ -151,43 +75,54 @@ const Index = () => {
       </nav>
 
       {/* Hero Section with Prediction Market Card */}
-      <section className="relative pt-32 pb-24 flex items-center min-h-screen">
-        <NetworkBackground />
+      <section className="relative pt-32 pb-24 flex items-center min-h-screen bg-slate-950">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left column - Hero content */}
+            {/* Left column - Hero content with enhanced Web3 styling */}
             <div className="flex flex-col items-start text-left">
-              <div className="inline-flex px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-sm font-medium mb-12 animate-fade-in">
-                Access Now Open
+              <div className="inline-flex px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-sm font-medium mb-12 animate-fade-in backdrop-blur-sm">
+                <span className="relative">
+                  <span className="absolute inset-0 bg-cyan-500/20 blur-sm"></span>
+                  <span className="relative">Access Now Open</span>
+                </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-[1.1] animate-fade-up">
-                Bet on the future of
-                <br />
-                <span className="relative inline-block">
-                  <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-[1.1] space-y-4">
+                <div className="flex items-center space-x-3">
+                  <span className="text-white">Bet on</span>
+                  <div className="h-1 w-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></div>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-white">the future of</span>
+                </div>
+                <div className="relative">
+                  <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 bg-size-200 animate-shimmer">
                     science
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-xl transform -rotate-2"></div>
-                </span>
+                  <div className="absolute -inset-1 blur-xl opacity-30 bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400"></div>
+                </div>
               </h1>
               
-              <p className="text-xl text-slate-300 mb-10 max-w-2xl animate-fade-up">
+              <p className="text-xl text-slate-300 mb-10 max-w-2xl border-l-2 border-cyan-500/50 pl-4">
                 Ideosphere harnesses the power of prediction markets to fund research
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-20 animate-fade-up">
-                <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
+              <div className="flex flex-col sm:flex-row gap-4 mb-20">
+                <Button className="group relative overflow-hidden bg-gradient-to-r from-slate-900 to-slate-800 text-white border border-cyan-500/30 px-8 py-5 text-lg hover:border-cyan-400/80 transition-all duration-300">
                   <span className="relative z-10 flex items-center">
-                    Join the waitlist
+                    <span className="relative">
+                      <span className="relative z-10">Join the waitlist</span>
+                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                    </span>
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 </Button>
               </div>
             </div>
 
             {/* Right column - Prediction Market Card */}
-            <div className="flex items-center justify-center md:justify-end animate-fade-up">
+            <div className="flex items-center justify-center md:justify-end">
               <PredictionMarketCard />
             </div>
           </div>

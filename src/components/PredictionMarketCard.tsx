@@ -6,7 +6,7 @@ import { Dna, ThumbsUp, ThumbsDown } from "lucide-react";
 
 export function PredictionMarketCard() {
   return (
-    <div className="py-24 w-full flex items-center justify-center">
+    <div className="w-full flex items-center justify-center">
       <PinContainer title="CRISPR Market" containerClassName="w-full max-w-md">
         <div className="flex flex-col p-6 tracking-tight text-white w-[22rem] h-[22rem] bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl neo-morphism border border-slate-700/50 rounded-2xl">
           {/* Header */}
@@ -96,7 +96,7 @@ export function PredictionMarketCard() {
         </div>
       </PinContainer>
 
-      <style jsx>{`
+      <style jsx global>{`
         @keyframes wave {
           0%, 100% {
             transform: translateX(0);

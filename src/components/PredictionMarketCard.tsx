@@ -23,7 +23,7 @@ export function PredictionMarketCard() {
             <div className="flex items-center gap-2">
               <Dna className="w-6 h-6 text-cyan-400" />
               <div className="text-xl font-bold text-white">
-                CRISPR Market
+                Ideosphere
               </div>
             </div>
             
@@ -95,17 +95,6 @@ export function PredictionMarketCard() {
           </div>
         </div>
       </PinContainer>
-
-      <style jsx>{`
-        @keyframes wave {
-          0%, 100% {
-            transform: translateX(0);
-          }
-          50% {
-            transform: translateX(50px);
-          }
-        }
-      `}</style>
     </div>
   );
 }

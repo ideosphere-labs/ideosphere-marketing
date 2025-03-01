@@ -1,8 +1,8 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Microscope, Zap, Trophy, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { PredictionMarketCard } from "@/components/PredictionMarketCard";
 
 // Scientific background animation
 const NetworkBackground = () => {
@@ -184,6 +184,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Prediction Market Card */}
+      <PredictionMarketCard />
 
       {/* Researchers Section */}
       <section className="relative py-24">

@@ -88,6 +88,43 @@ export const AnimatedGradient: React.FC<AnimatedGradientProps> = ({
           style={{ filter: `blur(${blurAmount})` }}
         />
       </svg>
+      
+      {/* Moving Light Effects */}
+      <div className="absolute inset-0 overflow-hidden">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <motion.div
+            key={`light-effect-${i}`}
+            className="absolute rounded-full bg-white/20"
+            style={{
+              width: `${30 + Math.random() * 100}px`,
+              height: `${30 + Math.random() * 100}px`,
+              filter: `blur(${15 + Math.random() * 30}px)`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              x: [
+                Math.random() * 200 - 100,
+                Math.random() * 200 - 100,
+                Math.random() * 200 - 100,
+              ],
+              y: [
+                Math.random() * 200 - 100,
+                Math.random() * 200 - 100,
+                Math.random() * 200 - 100,
+              ],
+              opacity: [0.1, 0.5, 0.1],
+            }}
+            transition={{
+              duration: 15 + Math.random() * 20,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+              delay: i * 2,
+            }}
+          />
+        ))}
+      </div>
     </motion.div>
   );
 };

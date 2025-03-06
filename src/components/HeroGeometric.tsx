@@ -98,9 +98,7 @@ export function HeroGeometric({
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12"
           >
             <Circle className="h-2 w-2 fill-cyan-500/80" />
-            <span className="text-sm text-white/60 tracking-wide">
-              {badge}
-            </span>
+            <span className="text-sm text-white/60 tracking-wide">{badge}</span>
           </motion.div>
 
           <motion.div
@@ -131,12 +129,15 @@ export function HeroGeometric({
             animate="visible"
           >
             <p className="text-base sm:text-lg md:text-xl text-slate-300 mb-8 leading-relaxed font-light tracking-wide">
-              Ideosphere harnesses the power of prediction markets to fund research
+              Ideosphere harnesses the power of prediction markets to fund
+              research
             </p>
 
             <GradientButton className="group relative overflow-hidden text-white px-6 py-3 text-base hover:scale-105 transition-all duration-300">
               <span className="relative z-10 flex items-center">
-                Join the waitlist
+                <a href="https://tally.so/r/mR41VP" target="_blank">
+                  Join the Waitlist
+                </a>
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </GradientButton>

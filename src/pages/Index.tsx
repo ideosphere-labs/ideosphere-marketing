@@ -213,7 +213,9 @@ const Index = () => {
           </div>
           <div className="mt-12 flex justify-center">
             <GradientButton className="flex items-center gap-2">
-              Submit a hypothesis
+              <a href="https://tally.so/r/wL0qry" target="_blank">
+                Submit a hypothesis
+              </a>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </GradientButton>
           </div>
@@ -306,7 +308,9 @@ const Index = () => {
 
           <div className="flex justify-center">
             <GradientButton variant="variant" className="flex items-center">
-              Join as trader
+              <a href="https://tally.so/r/mR41VP" target="_blank">
+                Join as trader
+              </a>
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </GradientButton>
           </div>

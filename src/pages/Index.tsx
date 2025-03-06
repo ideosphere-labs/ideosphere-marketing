@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Microscope, Zap, Trophy, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { HeroGeometric } from "@/components/HeroGeometric";
 import { PredictionMarketCard } from "@/components/PredictionMarketCard";
 
 // Scientific background animation
@@ -149,44 +150,12 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative pt-32 flex items-center justify-center min-h-screen">
-        <NetworkBackground />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center text-center">
-            <div className="inline-flex px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-sm font-medium mb-12 animate-fade-in">
-              Access Now Open
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-[1.1] animate-fade-up">
-              Bet on the future of
-              <br />
-              <span className="relative inline-block">
-                <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                  science
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-xl transform -rotate-2"></div>
-              </span>
-            </h1>
-            
-            <p className="text-xl text-slate-300 mb-10 max-w-2xl animate-fade-up">
-              Ideosphere harnesses the power of prediction markets to fund research
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-20 animate-fade-up">
-              <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
-                <span className="relative z-10 flex items-center">
-                  Join the waitlist
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Prediction Market Card */}
-      <PredictionMarketCard />
+      {/* Hero Section - Replaced with HeroGeometric */}
+      <HeroGeometric 
+        badge="Prediction Markets"
+        title1="Bet on the future"
+        title2="of science"
+      />
 
       {/* Researchers Section */}
       <section className="relative py-24">

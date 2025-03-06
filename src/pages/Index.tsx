@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { GradientButton } from "@/components/ui/gradient-button";
 import { ArrowRight, Network, Microscope, Zap, Trophy, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { HeroGeometric } from "@/components/HeroGeometric";
@@ -147,9 +148,9 @@ const Index = () => {
                 className="h-3.5" 
               />
             </div>
-            <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0">
+            <GradientButton>
               Project submissions open
-            </Button>
+            </GradientButton>
           </div>
         </div>
       </nav>
@@ -178,12 +179,10 @@ const Index = () => {
             />
           </div>
           <div className="mt-12 flex justify-center">
-            <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
-              <span className="relative z-10 flex items-center">
-                Submit a hypothesis
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-            </Button>
+            <GradientButton className="flex items-center">
+              Submit a hypothesis
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </GradientButton>
           </div>
         </div>
       </section>
@@ -257,12 +256,10 @@ const Index = () => {
           </div>
 
           <div className="flex justify-center">
-            <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
-              <span className="relative z-10 flex items-center">
-                Join as trader
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-            </Button>
+            <GradientButton variant="variant" className="flex items-center">
+              Join as trader
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </GradientButton>
           </div>
         </div>
       </section>

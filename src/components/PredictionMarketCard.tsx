@@ -1,7 +1,6 @@
 
 import React from "react";
 import { PinContainer } from "@/components/ui/3d-pin";
-import { motion } from "framer-motion";
 import { Dna, ThumbsUp, ThumbsDown } from "lucide-react";
 
 export function PredictionMarketCard() {
@@ -95,17 +94,6 @@ export function PredictionMarketCard() {
           </div>
         </div>
       </PinContainer>
-
-      <style jsx>{`
-        @keyframes wave {
-          0%, 100% {
-            transform: translateX(0);
-          }
-          50% {
-            transform: translateX(50px);
-          }
-        }
-      `}</style>
     </div>
   );
 }

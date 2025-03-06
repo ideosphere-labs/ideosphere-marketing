@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Microscope, Zap, Trophy, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { PredictionMarketCard } from "@/components/PredictionMarketCard";
+import { GlowingEffectDemo } from "@/components/GlowingEffectDemo";
 
 // Scientific background animation
 const NetworkBackground = () => {
@@ -187,6 +188,13 @@ const Index = () => {
 
       {/* Prediction Market Card */}
       <PredictionMarketCard />
+
+      {/* Glowing Effect Demo Section */}
+      <section className="relative py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <GlowingEffectDemo />
+        </div>
+      </section>
 
       {/* Researchers Section */}
       <section className="relative py-24">

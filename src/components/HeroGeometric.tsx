@@ -16,7 +16,7 @@ interface HeroGeometricProps {
 }
 
 export function HeroGeometric({
-  badge = "Prediction Markets",
+  badge = "Project submissions open", // Changed from "Prediction Markets" to "Project submissions open"
   title1 = "Bet on the future",
   title2 = "of science",
 }: HeroGeometricProps) {
@@ -134,10 +134,10 @@ export function HeroGeometric({
               Ideosphere harnesses the power of prediction markets to fund research
             </p>
 
-            <GradientButton className="group relative overflow-hidden text-white px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
+            <GradientButton className="group relative overflow-hidden text-white px-6 py-3 text-base hover:scale-105 transition-all duration-300">
               <span className="relative z-10 flex items-center">
                 Join the waitlist
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </GradientButton>
           </motion.div>

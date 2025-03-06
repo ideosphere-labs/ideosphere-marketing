@@ -155,7 +155,7 @@ const Index = () => {
 
       {/* Hero Section - Replaced with HeroGeometric */}
       <HeroGeometric 
-        badge="Prediction Markets"
+        badge="Project submissions open"
         title1="Bet on the future"
         title2="of science"
       />
@@ -177,9 +177,9 @@ const Index = () => {
             />
           </div>
           <div className="mt-12 flex justify-center">
-            <GradientButton className="flex items-center">
+            <GradientButton className="flex items-center gap-2">
               Submit a hypothesis
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </GradientButton>
           </div>
         </div>

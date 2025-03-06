@@ -95,17 +95,6 @@ export function PredictionMarketCard() {
           </div>
         </div>
       </PinContainer>
-
-      <style>
-        @keyframes wave {
-          0%, 100% {
-            transform: translateX(0);
-          }
-          50% {
-            transform: translateX(50px);
-          }
-        }
-      </style>
     </div>
   );
 }

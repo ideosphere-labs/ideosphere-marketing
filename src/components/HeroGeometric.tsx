@@ -1,14 +1,13 @@
-
 "use client";
 
 import React from "react";
 import { motion } from "framer-motion";
 import { Circle } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { ElegantShape } from "@/components/ui/elegant-shape";
 import { PredictionMarketCard } from "@/components/PredictionMarketCard";
+import { GradientButton } from "@/components/ui/gradient-button";
 
 interface HeroGeometricProps {
   badge?: string;
@@ -135,12 +134,12 @@ export function HeroGeometric({
               Ideosphere harnesses the power of prediction markets to fund research
             </p>
 
-            <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
+            <GradientButton className="group relative overflow-hidden text-white px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
               <span className="relative z-10 flex items-center">
                 Join the waitlist
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
-            </Button>
+            </GradientButton>
           </motion.div>
         </div>
 

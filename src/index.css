@@ -53,13 +53,13 @@
 
   @property --color-1 {
     syntax: '<color>';
-    initial-value: #06b6d4; /* Cyan color */
+    initial-value: #03576f; /* Darker cyan */
     inherits: false;
   }
 
   @property --color-2 {
     syntax: '<color>';
-    initial-value: #0284c7; /* Blue color */
+    initial-value: #0267a1; /* Darker blue */
     inherits: false;
   }
 

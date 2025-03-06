@@ -145,12 +145,10 @@ const Index = () => {
               <img 
                 src="https://res.cloudinary.com/dk9mn4cvz/image/upload/v1741238231/Ideosphere-Logo_qld98r.svg" 
                 alt="Ideosphere Logo" 
-                className="h-3.5" 
+                className="h-5" 
               />
             </div>
-            <GradientButton>
-              Project submissions open
-            </GradientButton>
+            {/* Removed the button from the top right */}
           </div>
         </div>
       </nav>

@@ -4,6 +4,8 @@ import { ArrowRight, Network, Microscope, Zap, Trophy, ChevronDown } from "lucid
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { PredictionMarketCard } from "@/components/PredictionMarketCard";
 import AnimatedGradientBackground from "@/components/AnimatedGradientBackground";
+import { ScienceImagesParallax } from "@/components/ScienceImagesParallax";
+import { motion } from "framer-motion";
 
 // Enhanced Feature card component with more animations
 const FeatureCard = ({ title, description, icon: Icon }) => (
@@ -75,16 +77,28 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section with new animated background */}
-      <section className="relative pt-32 flex items-center justify-center min-h-screen">
+      {/* Hero Section with new floating images */}
+      <section className="relative pt-20 pb-32 min-h-screen flex items-center justify-center">
         <AnimatedGradientBackground />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ScienceImagesParallax />
+        
+        <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center">
-            <div className="inline-flex px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-sm font-medium mb-12 animate-fade-in">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-flex px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-sm font-medium mb-8"
+            >
               Access Now Open
-            </div>
+            </motion.div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-[1.1] animate-fade-up">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-6xl md:text-8xl font-bold mb-8 leading-[1.1]"
+            >
               Bet on the future of
               <br />
               <span className="relative inline-block">
@@ -93,25 +107,35 @@ const Index = () => {
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-xl transform -rotate-2"></div>
               </span>
-            </h1>
+            </motion.h1>
             
-            <p className="text-xl text-slate-300 mb-10 max-w-2xl animate-fade-up">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="text-2xl md:text-3xl text-slate-300 mb-12 max-w-2xl font-light"
+            >
               Ideosphere harnesses the power of prediction markets to fund research
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-20 animate-fade-up">
-              <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="flex flex-col sm:flex-row gap-4 mb-20"
+            >
+              <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-6 text-xl font-medium hover:scale-105 transition-all duration-300">
                 <span className="relative z-10 flex items-center">
                   Join the waitlist
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </Button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Prediction Market Card */}
+      {/* Rest of the content */}
       <PredictionMarketCard />
 
       {/* Researchers Section */}

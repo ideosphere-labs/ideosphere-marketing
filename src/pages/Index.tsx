@@ -308,8 +308,12 @@ This creates a transparent system where the scientific community's expertise, co
       <footer className="relative border-t border-slate-800/50 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center">
-            <div className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-6">
-              Ideosphere
+            <div className="mb-6">
+              <img 
+                src="https://res.cloudinary.com/dk9mn4cvz/image/upload/v1741238231/Ideosphere-Logo_qld98r.svg" 
+                alt="Ideosphere Logo" 
+                className="h-8" 
+              />
             </div>
             <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-8">
               <a href="#" className="text-sm text-slate-400 hover:text-white transition-colors">About</a>

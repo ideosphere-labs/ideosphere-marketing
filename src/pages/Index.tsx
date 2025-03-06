@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Microscope, Zap, Trophy, ChevronDown } from "lucide-react";
@@ -160,7 +161,7 @@ const Index = () => {
       {/* Researchers Section */}
       <section className="relative py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-12">For Researchers</h2>
+          <h2 className="text-4xl font-normal mb-12 tracking-tight">For Researchers</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <FeatureCard
               icon={Microscope}
@@ -188,7 +189,7 @@ const Index = () => {
       <section className="relative py-24 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <h2 className="text-4xl font-bold mb-8">For Traders</h2>
+            <h2 className="text-4xl font-normal mb-8 tracking-tight">For Traders</h2>
             <p className="text-xl text-slate-300 mb-6">
               Ideosphere connects traders to emerging science through prediction markets. Join a community exploring research outcomes, get direct access to project updates, and participate in a new model for funding science.
             </p>
@@ -221,7 +222,7 @@ const Index = () => {
           </div>
 
           <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 rounded-xl p-8 mb-12">
-            <h3 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+            <h3 className="text-2xl font-normal mb-4 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
               Benefits for Traders
             </h3>
             <ul className="grid md:grid-cols-2 gap-6">
@@ -266,7 +267,7 @@ const Index = () => {
       {/* FAQ Section */}
       <section className="relative py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-12">FAQ</h2>
+          <h2 className="text-4xl font-normal mb-12 tracking-tight">FAQ</h2>
           <div className="space-y-4">
             <FAQ 
               question="What is Ideosphere and how does it work?" 
@@ -292,7 +293,7 @@ This creates a transparent system where the scientific community's expertise, co
             />
           </div>
           <div className="mt-16 text-center">
-            <h3 className="text-2xl font-bold mb-4">Still have questions?</h3>
+            <h3 className="text-2xl font-normal mb-4 tracking-tight">Still have questions?</h3>
             <p className="text-slate-400">
               Can't find the answer you're looking for? Please reach to our friendly team at{' '}
               <a href="mailto:mariana@ideosphere.io" className="text-cyan-400 hover:text-cyan-300">

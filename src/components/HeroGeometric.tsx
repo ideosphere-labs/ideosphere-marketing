@@ -88,7 +88,7 @@ export function HeroGeometric({
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col lg:flex-row items-center justify-between gap-16">
+      <div className="relative z-10 container mx-auto px-4 md:px-6 flex flex-col lg:flex-row items-center justify-between gap-16 pt-24">
         {/* Text content */}
         <div className="max-w-2xl text-left">
           <motion.div

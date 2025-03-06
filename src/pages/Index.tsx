@@ -3,9 +3,81 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Microscope, Zap, Trophy, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { PredictionMarketCard } from "@/components/PredictionMarketCard";
-import AnimatedGradientBackground from "@/components/AnimatedGradientBackground";
-import { ScienceImagesParallax } from "@/components/ScienceImagesParallax";
-import { motion } from "framer-motion";
+
+// Scientific background animation
+const NetworkBackground = () => {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute w-full h-full opacity-20">
+        {/* DNA Helix */}
+        <svg className="absolute w-full h-full" viewBox="0 0 100 100">
+          {[...Array(10)].map((_, i) => (
+            <g key={`helix-${i}`} className="animate-float" style={{ animationDelay: `${i * 0.2}s` }}>
+              <path
+                d={`M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}`}
+                className="text-cyan-500"
+                stroke="currentColor"
+                strokeWidth="0.2"
+                fill="none"
+              >
+                <animate
+                  attributeName="d"
+                  dur="10s"
+                  repeatCount="indefinite"
+                  values={`
+                    M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20};
+                    M ${10 + (i * 8)} ${20 + Math.cos(i) * 20} Q ${20 + (i * 8)} ${40 + Math.sin(i) * 20} ${30 + (i * 8)} ${60 + Math.cos(i) * 20};
+                    M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}
+                  `}
+                />
+              </path>
+              <circle
+                r="0.5"
+                className="text-blue-400"
+                fill="currentColor"
+              >
+                <animateMotion
+                  dur={`${8 + i * 0.5}s`}
+                  repeatCount="indefinite"
+                  path={`M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}`}
+                />
+              </circle>
+            </g>
+          ))}
+        </svg>
+
+        {/* Floating Particles */}
+        <svg className="absolute w-full h-full" viewBox="0 0 100 100">
+          {[...Array(20)].map((_, i) => (
+            <circle
+              key={`particle-${i}`}
+              cx={Math.random() * 100}
+              cy={Math.random() * 100}
+              r={0.3 + Math.random() * 0.5}
+              className="text-cyan-400"
+              fill="currentColor"
+            >
+              <animate
+                attributeName="opacity"
+                dur={`${3 + Math.random() * 2}s`}
+                values="0;1;0"
+                repeatCount="indefinite"
+                begin={`${Math.random() * 2}s`}
+              />
+              <animate
+                attributeName="cy"
+                dur={`${10 + Math.random() * 5}s`}
+                values={`${Math.random() * 100};${Math.random() * 100}`}
+                repeatCount="indefinite"
+                begin={`${Math.random() * 2}s`}
+              />
+            </circle>
+          ))}
+        </svg>
+      </div>
+    </div>
+  );
+};
 
 // Enhanced Feature card component with more animations
 const FeatureCard = ({ title, description, icon: Icon }) => (
@@ -77,28 +149,16 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section with new floating images */}
-      <section className="relative pt-20 pb-32 min-h-screen flex items-center justify-center">
-        <AnimatedGradientBackground />
-        <ScienceImagesParallax />
-        
-        <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section */}
+      <section className="relative pt-32 flex items-center justify-center min-h-screen">
+        <NetworkBackground />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-sm font-medium mb-8"
-            >
+            <div className="inline-flex px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-sm font-medium mb-12 animate-fade-in">
               Access Now Open
-            </motion.div>
+            </div>
             
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-6xl md:text-8xl font-bold mb-8 leading-[1.1]"
-            >
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-[1.1] animate-fade-up">
               Bet on the future of
               <br />
               <span className="relative inline-block">
@@ -107,35 +167,25 @@ const Index = () => {
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-xl transform -rotate-2"></div>
               </span>
-            </motion.h1>
+            </h1>
             
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-2xl md:text-3xl text-slate-300 mb-12 max-w-2xl font-light"
-            >
+            <p className="text-xl text-slate-300 mb-10 max-w-2xl animate-fade-up">
               Ideosphere harnesses the power of prediction markets to fund research
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 mb-20"
-            >
-              <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-6 text-xl font-medium hover:scale-105 transition-all duration-300">
+            <div className="flex flex-col sm:flex-row gap-4 mb-20 animate-fade-up">
+              <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
                 <span className="relative z-10 flex items-center">
                   Join the waitlist
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </Button>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Rest of the content */}
+      {/* Prediction Market Card */}
       <PredictionMarketCard />
 
       {/* Researchers Section */}

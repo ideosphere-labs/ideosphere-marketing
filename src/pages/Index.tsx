@@ -144,11 +144,11 @@ const Index = () => {
               <img 
                 src="https://res.cloudinary.com/dk9mn4cvz/image/upload/v1741238231/Ideosphere-Logo_qld98r.svg" 
                 alt="Ideosphere Logo" 
-                className="h-8" 
+                className="h-3.5" 
               />
             </div>
             <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0">
-              Join the waitlist
+              Project submissions open
             </Button>
           </div>
         </div>
@@ -315,7 +315,7 @@ This creates a transparent system where the scientific community's expertise, co
               <img 
                 src="https://res.cloudinary.com/dk9mn4cvz/image/upload/v1741238231/Ideosphere-Logo_qld98r.svg" 
                 alt="Ideosphere Logo" 
-                className="h-8" 
+                className="h-3.5" 
               />
             </div>
             <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-8">

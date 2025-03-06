@@ -51,21 +51,3 @@
     @apply shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-xl;
   }
 }
-
-@keyframes wave {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(50px);
-  }
-}
-
-@keyframes svgTrace {
-  0% {
-    stroke-dashoffset: var(--path-length);
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}

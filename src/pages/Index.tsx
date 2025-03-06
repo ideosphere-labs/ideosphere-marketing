@@ -1,10 +1,8 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Microscope, Zap, Trophy, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { PredictionMarketCard } from "@/components/PredictionMarketCard";
-import { GradientTracing } from "@/components/ui/gradient-tracing";
 
 // Scientific background animation
 const NetworkBackground = () => {
@@ -152,18 +150,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 flex items-center justify-center min-h-screen overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <GradientTracing 
-            width={1200} 
-            height={800} 
-            path="M600,400 m0,-300 a300,300 0 1,1 -0.1,0 z M600,400 m0,-250 a250,250 0 1,0 0.1,0 z M600,400 m0,-200 a200,200 0 1,1 -0.1,0 z M600,400 m0,-150 a150,150 0 1,0 0.1,0 z M600,400 m0,-100 a100,100 0 1,1 -0.1,0 z"
-            gradientColors={["#06b6d4", "#0ea5e9", "#3b82f6"]}
-            strokeWidth={1.5}
-            duration={15}
-            className="w-full h-full opacity-30"
-          />
-        </div>
+      <section className="relative pt-32 flex items-center justify-center min-h-screen">
         <NetworkBackground />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center">

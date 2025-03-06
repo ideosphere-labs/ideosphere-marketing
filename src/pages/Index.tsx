@@ -3,81 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Microscope, Zap, Trophy, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { PredictionMarketCard } from "@/components/PredictionMarketCard";
-
-// Scientific background animation
-const NetworkBackground = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute w-full h-full opacity-20">
-        {/* DNA Helix */}
-        <svg className="absolute w-full h-full" viewBox="0 0 100 100">
-          {[...Array(10)].map((_, i) => (
-            <g key={`helix-${i}`} className="animate-float" style={{ animationDelay: `${i * 0.2}s` }}>
-              <path
-                d={`M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}`}
-                className="text-cyan-500"
-                stroke="currentColor"
-                strokeWidth="0.2"
-                fill="none"
-              >
-                <animate
-                  attributeName="d"
-                  dur="10s"
-                  repeatCount="indefinite"
-                  values={`
-                    M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20};
-                    M ${10 + (i * 8)} ${20 + Math.cos(i) * 20} Q ${20 + (i * 8)} ${40 + Math.sin(i) * 20} ${30 + (i * 8)} ${60 + Math.cos(i) * 20};
-                    M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}
-                  `}
-                />
-              </path>
-              <circle
-                r="0.5"
-                className="text-blue-400"
-                fill="currentColor"
-              >
-                <animateMotion
-                  dur={`${8 + i * 0.5}s`}
-                  repeatCount="indefinite"
-                  path={`M ${10 + (i * 8)} ${10 + Math.sin(i) * 20} Q ${20 + (i * 8)} ${30 + Math.cos(i) * 20} ${30 + (i * 8)} ${50 + Math.sin(i) * 20}`}
-                />
-              </circle>
-            </g>
-          ))}
-        </svg>
-
-        {/* Floating Particles */}
-        <svg className="absolute w-full h-full" viewBox="0 0 100 100">
-          {[...Array(20)].map((_, i) => (
-            <circle
-              key={`particle-${i}`}
-              cx={Math.random() * 100}
-              cy={Math.random() * 100}
-              r={0.3 + Math.random() * 0.5}
-              className="text-cyan-400"
-              fill="currentColor"
-            >
-              <animate
-                attributeName="opacity"
-                dur={`${3 + Math.random() * 2}s`}
-                values="0;1;0"
-                repeatCount="indefinite"
-                begin={`${Math.random() * 2}s`}
-              />
-              <animate
-                attributeName="cy"
-                dur={`${10 + Math.random() * 5}s`}
-                values={`${Math.random() * 100};${Math.random() * 100}`}
-                repeatCount="indefinite"
-                begin={`${Math.random() * 2}s`}
-              />
-            </circle>
-          ))}
-        </svg>
-      </div>
-    </div>
-  );
-};
+import AnimatedGradientBackground from "@/components/AnimatedGradientBackground";
 
 // Enhanced Feature card component with more animations
 const FeatureCard = ({ title, description, icon: Icon }) => (
@@ -149,9 +75,9 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section with new animated background */}
       <section className="relative pt-32 flex items-center justify-center min-h-screen">
-        <NetworkBackground />
+        <AnimatedGradientBackground />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center">
             <div className="inline-flex px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-sm font-medium mb-12 animate-fade-in">

@@ -51,3 +51,37 @@
     @apply shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-xl;
   }
 }
+
+/* SVG Filter Animations */
+@keyframes turbulence {
+  0% {
+    baseFrequency: 0.02 0.05;
+  }
+  50% {
+    baseFrequency: 0.04 0.07;
+  }
+  100% {
+    baseFrequency: 0.02 0.05;
+  }
+}
+
+@keyframes wave {
+  0% {
+    x: 0%;
+  }
+  100% {
+    x: 100%;
+  }
+}
+
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(45deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}

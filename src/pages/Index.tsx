@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { GradientButton } from "@/components/ui/gradient-button";
 import {
   ArrowRight,
   Network,
@@ -13,6 +14,8 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { HeroGeometric } from "@/components/HeroGeometric";
+import { PredictionMarketCard } from "@/components/PredictionMarketCard";
 
 // Scientific background animation
 const NetworkBackground = () => {
@@ -171,61 +174,31 @@ const Index = () => {
       <nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-lg border-b border-slate-800/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-              Ideosphere
+            <div className="flex items-center">
+              <img
+                src="https://res.cloudinary.com/dk9mn4cvz/image/upload/v1741238231/Ideosphere-Logo_qld98r.svg"
+                alt="Ideosphere Logo"
+                className="h-5"
+              />
             </div>
-            <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0">
-              <a href="https://tally.so/r/mR41VP" target="_blank">
-                Join the waitlist
-              </a>
-            </Button>
+            {/* Removed the button from the top right */}
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative pt-32 flex items-center justify-center min-h-screen">
-        <NetworkBackground />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center text-center">
-            <div className="inline-flex px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-sm font-medium mb-12 animate-fade-in">
-              Access Now Open
-            </div>
-
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-[1.1] animate-fade-up">
-              Bet on the future of
-              <br />
-              <span className="relative inline-block">
-                <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                  science
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-xl transform -rotate-2"></div>
-              </span>
-            </h1>
-
-            <p className="text-xl text-slate-300 mb-10 max-w-2xl animate-fade-up">
-              Ideosphere harnesses the power of prediction markets to fund
-              research
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-20 animate-fade-up">
-              <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
-                <span className="relative z-10 flex items-center">
-                  <a href="https://tally.so/r/mR41VP" target="_blank">
-                    Join the waitlist
-                  </a>
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section - Replaced with HeroGeometric */}
+      <HeroGeometric
+        badge="Project submissions open"
+        title1="Bet on the future"
+        title2="of science"
+      />
 
       {/* Researchers Section */}
       <section className="relative py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-12">For Researchers</h2>
+          <h2 className="text-4xl font-normal mb-12 tracking-tight">
+            For Researchers
+          </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <FeatureCard
               icon={Microscope}
@@ -239,14 +212,10 @@ const Index = () => {
             />
           </div>
           <div className="mt-12 flex justify-center">
-            <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
-              <span className="relative z-10 flex items-center">
-                <a href="https://tally.so/r/mR41VP" target="_blank">
-                  Submit a hypothesis
-                </a>
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-            </Button>
+            <GradientButton className="flex items-center gap-2">
+              Submit a hypothesis
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </GradientButton>
           </div>
         </div>
       </section>
@@ -255,7 +224,9 @@ const Index = () => {
       <section className="relative py-24 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
-            <h2 className="text-4xl font-bold mb-8">For Traders</h2>
+            <h2 className="text-4xl font-normal mb-8 tracking-tight">
+              For Traders
+            </h2>
             <p className="text-xl text-slate-300 mb-6">
               Ideosphere connects traders to emerging science through prediction
               markets. Join a community exploring research outcomes, get direct
@@ -294,7 +265,7 @@ const Index = () => {
           </div>
 
           <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 rounded-xl p-8 mb-12">
-            <h3 className="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+            <h3 className="text-2xl font-normal mb-4 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
               Benefits for Traders
             </h3>
             <ul className="grid md:grid-cols-2 gap-6">
@@ -334,14 +305,10 @@ const Index = () => {
           </div>
 
           <div className="flex justify-center">
-            <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
-              <span className="relative z-10 flex items-center">
-                <a href="https://tally.so/r/mR41VP" target="_blank">
-                  Join as trader
-                </a>
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-            </Button>
+            <GradientButton variant="variant" className="flex items-center">
+              Join as trader
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </GradientButton>
           </div>
         </div>
       </section>
@@ -349,7 +316,7 @@ const Index = () => {
       {/* FAQ Section */}
       <section className="relative py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold mb-12">FAQ</h2>
+          <h2 className="text-4xl font-normal mb-12 tracking-tight">FAQ</h2>
           <div className="space-y-4">
             <FAQ
               question="What is Ideosphere and how does it work?"
@@ -375,7 +342,9 @@ This creates a transparent system where the scientific community's expertise, co
             />
           </div>
           <div className="mt-16 text-center">
-            <h3 className="text-2xl font-bold mb-4">Still have questions?</h3>
+            <h3 className="text-2xl font-normal mb-4 tracking-tight">
+              Still have questions?
+            </h3>
             <p className="text-slate-400">
               Can't find the answer you're looking for? Please reach to our
               friendly team at{" "}
@@ -394,8 +363,12 @@ This creates a transparent system where the scientific community's expertise, co
       <footer className="relative border-t border-slate-800/50 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center">
-            <div className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-6">
-              Ideosphere
+            <div className="mb-6">
+              <img
+                src="https://res.cloudinary.com/dk9mn4cvz/image/upload/v1741238231/Ideosphere-Logo_qld98r.svg"
+                alt="Ideosphere Logo"
+                className="h-3.5"
+              />
             </div>
             <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-8">
               <a

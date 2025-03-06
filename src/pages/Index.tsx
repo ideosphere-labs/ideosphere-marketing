@@ -1,8 +1,10 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Network, Microscope, Zap, Trophy, ChevronDown } from "lucide-react";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { PredictionMarketCard } from "@/components/PredictionMarketCard";
+import { VerticalCutReveal } from "@/components/ui/vertical-cut-reveal";
 
 // Scientific background animation
 const NetworkBackground = () => {
@@ -150,43 +152,47 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 flex items-center justify-center min-h-screen">
+      <section className="relative pt-32 min-h-screen">
         <NetworkBackground />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center text-center">
-            <div className="inline-flex px-4 py-2 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-sm font-medium mb-12 animate-fade-in">
-              Access Now Open
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="flex flex-col items-start text-left">
+              <VerticalCutReveal
+                splitBy="lines"
+                staggerDuration={0.15}
+                staggerFrom="first"
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 21,
+                }}
+                containerClassName="text-left mb-6"
+              >
+                {"Bet on the future of\nscience"}
+              </VerticalCutReveal>
+              
+              <p className="text-xl text-slate-300 mb-10 max-w-xl animate-fade-up">
+                Ideosphere harnesses the power of prediction markets to fund research
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-20 animate-fade-up">
+                <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
+                  <span className="relative z-10 flex items-center">
+                    Join the waitlist
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                </Button>
+              </div>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-[1.1] animate-fade-up">
-              Bet on the future of
-              <br />
-              <span className="relative inline-block">
-                <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                  science
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 blur-xl transform -rotate-2"></div>
-              </span>
-            </h1>
-            
-            <p className="text-xl text-slate-300 mb-10 max-w-2xl animate-fade-up">
-              Ideosphere harnesses the power of prediction markets to fund research
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-20 animate-fade-up">
-              <Button className="group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white border-0 px-8 py-5 text-lg hover:scale-105 transition-all duration-300">
-                <span className="relative z-10 flex items-center">
-                  Join the waitlist
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </Button>
+            <div className="flex justify-center lg:justify-end">
+              <div className="max-w-md w-full scale-90 lg:scale-100">
+                <PredictionMarketCard />
+              </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Prediction Market Card */}
-      <PredictionMarketCard />
 
       {/* Researchers Section */}
       <section className="relative py-24">

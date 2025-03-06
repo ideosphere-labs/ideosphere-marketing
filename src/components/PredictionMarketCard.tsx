@@ -6,7 +6,12 @@ import { Dna, ThumbsUp, ThumbsDown } from "lucide-react";
 
 export function PredictionMarketCard() {
   return (
-    <div className="py-24 w-full flex items-center justify-center">
+    <motion.div 
+      className="w-full flex items-center justify-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6, delay: 0.4 }}
+    >
       <PinContainer title="CRISPR Market" containerClassName="w-full max-w-md">
         <div className="flex flex-col p-6 tracking-tight text-white w-[22rem] h-[22rem] bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl neo-morphism border border-slate-700/50 rounded-2xl">
           {/* Header */}
@@ -69,18 +74,10 @@ export function PredictionMarketCard() {
                 </div>
               </div>
               
-              {[1, 2, 3].map((i) => (
-                <div 
-                  key={i}
-                  className="absolute w-full h-16"
-                  style={{
-                    background: `linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.1) 50%, transparent 100%)`,
-                    animation: `wave ${2 + i * 0.5}s ease-in-out infinite`,
-                    opacity: 0.3 / i,
-                    transform: `translateX(${i * 10}px)`,
-                  }}
-                />
-              ))}
+              {/* Wave animation */}
+              <div className="absolute w-full h-16">
+                <div className="wave-animation" />
+              </div>
             </div>
 
             {/* Footer */}
@@ -95,17 +92,6 @@ export function PredictionMarketCard() {
           </div>
         </div>
       </PinContainer>
-
-      <style jsx>{`
-        @keyframes wave {
-          0%, 100% {
-            transform: translateX(0);
-          }
-          50% {
-            transform: translateX(50px);
-          }
-        }
-      `}</style>
-    </div>
+    </motion.div>
   );
 }

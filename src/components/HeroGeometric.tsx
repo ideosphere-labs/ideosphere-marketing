@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Circle } from "lucide-react";
+import { Circle, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { ElegantShape } from "@/components/ui/elegant-shape";
@@ -20,6 +20,8 @@ export function HeroGeometric({
   title1 = "Bet on the future",
   title2 = "of science",
 }: HeroGeometricProps) {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
@@ -133,11 +135,12 @@ export function HeroGeometric({
               research
             </p>
 
-            <GradientButton className="group relative overflow-hidden text-white px-6 py-3 text-base hover:scale-105 transition-all duration-300">
+            <GradientButton
+              className="group relative overflow-hidden text-white px-6 py-3 text-base hover:scale-105 transition-all duration-300"
+              onClick={() => setIsVideoModalOpen(true)}
+            >
               <span className="relative z-10 flex items-center">
-                <a href="https://tally.so/r/mR41VP" target="_blank">
-                  Join the Waitlist
-                </a>
+                <a onClick={() => setIsVideoModalOpen(true)}>Watch the video</a>
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </GradientButton>
@@ -155,6 +158,27 @@ export function HeroGeometric({
           <PredictionMarketCard />
         </motion.div>
       </div>
+
+      {isVideoModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
+          <div className="relative w-full h-full max-w-7xl max-h-[80vh] aspect-video">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/bB6fbQUIeh4?autoplay=1"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+            <button
+              className="absolute top-4 right-4 p-2 rounded-full bg-slate-900/80 hover:bg-slate-800 text-white transition-colors"
+              onClick={() => setIsVideoModalOpen(false)}
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/80 pointer-events-none" />

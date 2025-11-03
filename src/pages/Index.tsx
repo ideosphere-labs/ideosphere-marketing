@@ -276,8 +276,8 @@ const Index = () => {
                   <Network className="w-5 h-5" />
                 </div>
                 <span className="text-slate-300">
-                  Hedge and capture alpha—use Ideosphere prices to spot
-                  tech-tree signals before markets move.
+                  Hedge against industry outcomes such as clinical trials or
+                  research outcomes.
                 </span>
               </li>
               <li className="flex items-start space-x-3">

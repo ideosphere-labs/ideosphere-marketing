@@ -293,7 +293,6 @@ const Index = () => {
                 <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
                   <Network className="w-5 h-5" />
                 </div>
-                x
                 <span className="text-slate-300">
                   Join a community shaping a new economy where collective
                   foresight funds discovery.

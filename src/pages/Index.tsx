@@ -189,36 +189,36 @@ const Index = () => {
       {/* Hero Section - Replaced with HeroGeometric */}
       <HeroGeometric
         badge="Project submissions open"
-        title1="Bet on the future"
-        title2="of science"
+        title1="The world’s first"
+        title2="Forecast-to-Funding Network"
       />
 
       {/* Researchers Section */}
       <section className="relative py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-normal mb-12 tracking-tight">
-            For Researchers
+            For Scientists & Technologists
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <FeatureCard
               icon={Microscope}
-              title="Unlock a novel funding stream"
-              description="Transform the inherent volatility of scientific discovery into a new source of funding. Create prediction markets around your subject of research and profit each time trades are made on the topic."
+              title="Propose & Validate"
+              description="Turn hypotheses into signals of confidence. Submit or support research ideas that the community tests for feasibility, risk, and impact, turning uncertainty into measurable probability. Instead of applying for grants, participants fund the methods, experiments, and success criteria that prove or disprove each idea."
             />
             <FeatureCard
               icon={Network}
-              title="Tap into collective intelligence"
-              description="Price action is a potent form of communication. Those who engage with your prediction markets likely have strong opinions on the subject that can be helpful."
+              title="Market & Evolve"
+              description="Ideosphere turns verified ideas into live markets that build cumulative credibility. When a project proves feasible, a prediction market tracks its progress and resolves automatically once success criteria are met. Forecasters and early backers earn rewards from market liquidity, and validated outcomes strengthen the network’s models, sharpening foresight and guiding smarter capital allocation."
             />
           </div>
-          <div className="mt-12 flex justify-center">
+          {/* <div className="mt-12 flex justify-center">
             <GradientButton className="flex items-center gap-2">
               <a href="https://tally.so/r/wL0qry" target="_blank">
                 Submit a hypothesis
               </a>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </GradientButton>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -227,42 +227,33 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
             <h2 className="text-4xl font-normal mb-8 tracking-tight">
-              For Traders
+              For Traders & Forecasters
             </h2>
-            <p className="text-xl text-slate-300 mb-6">
-              Ideosphere connects traders to emerging science through prediction
-              markets. Join a community exploring research outcomes, get direct
-              access to project updates, and participate in a new model for
-              funding science.
-            </p>
-            <p className="text-slate-400">
-              Traditional grant funding wastes $28B annually on abandoned
-              research, with researchers spending 44% of their time chasing
-              grants. Your market participation creates a more efficient funding
-              mechanism.
-            </p>
+            {/* <p className="text-xl text-slate-300 mb-6">
+              Trade on the frontier of science and technology
+            </p> */}
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <TraderFeatureCard
               icon={Zap}
-              title="Provide liquidity to fuel pioneering research"
-              description="Bootstrap promising research markets as a liquidity provider. Face capped losses while accessing unlimited upside potential on breakthrough discoveries. Your participation helps create deep, efficient markets for scientific predictions."
+              title="Trade On A New Frontier"
+              description="Forecast what’s next by trading on the frontier of science and technology. Hedge on research outcomes, clinical trials, and emerging breakthroughs to profit from your foresight and gain alpha from your domain expertise. Your predictions turn insight into transparent, data-driven signals that surface credible discoveries before they reach the mainstream."
             />
             <TraderFeatureCard
               icon={Network}
-              title="Bet on research outcomes"
-              description="Take positions on scientific hypotheses and research milestones. Your trading activity generates direct funding for researchers while giving you the opportunity to profit from successful predictions. Access unique alpha in the scientific domain."
+              title="Forecast Outcomes Across Domains"
+              description="Discover and evaluate high-impact, overlooked research proposals before they’re funded. Perform due diligence across science and technology—from biotech to AI—and gain shared ownership in projects you help surface and validate. Each assessment sharpens collective foresight and directs capital toward ideas that matter most."
             />
             <TraderFeatureCard
               icon={Trophy}
-              title="Profit on scientific progress"
-              description="Contribute to price discovery while generating immediate cash flow for researchers. Access project updates directly from research teams to inform your trading decisions and maximize returns. Build a portfolio of scientific predictions."
+              title="Profit from Verified Progress"
+              description="When projects reach their milestones, markets resolve transparently on-chain. Top forecasters earn rewards, reputation, and influence, while a share of market activity fuels new community-funded research—building both prestige and impact with every accurate call."
             />
             <TraderFeatureCard
               icon={Microscope}
               title="Disrupt the funding paradigm"
-              description="Help revolutionize how science gets funded. Traditional funding methods are inefficient and slow. Your market participation creates a more dynamic funding mechanism that lets researchers focus on breakthroughs instead of grant applications."
+              description="Traditional funding methods are inefficient and slow. Your market participation creates a more dynamic funding mechanism that lets researchers & technologists focus on breakthroughs instead of grant applications."
             />
           </div>
 
@@ -276,7 +267,8 @@ const Index = () => {
                   <Network className="w-5 h-5" />
                 </div>
                 <span className="text-slate-300">
-                  Direct access to research teams
+                  Trade on the tech tree and capture alpha before it becomes
+                  consensus.
                 </span>
               </li>
               <li className="flex items-start space-x-3">
@@ -284,7 +276,8 @@ const Index = () => {
                   <Network className="w-5 h-5" />
                 </div>
                 <span className="text-slate-300">
-                  Early access to research findings
+                  Hedge and capture alpha—use Ideosphere prices to spot
+                  tech-tree signals before markets move.
                 </span>
               </li>
               <li className="flex items-start space-x-3">
@@ -292,7 +285,8 @@ const Index = () => {
                   <Network className="w-5 h-5" />
                 </div>
                 <span className="text-slate-300">
-                  Capped downside, unlimited upside
+                  Earn rewards, prestige, and tokens by turning foresight into
+                  the fuel of discovery.
                 </span>
               </li>
               <li className="flex items-start space-x-3">
@@ -300,20 +294,21 @@ const Index = () => {
                   <Network className="w-5 h-5" />
                 </div>
                 <span className="text-slate-300">
-                  Community of scientific traders
+                  Join a community shaping a new economy where collective
+                  foresight funds discovery.
                 </span>
               </li>
             </ul>
           </div>
 
-          <div className="flex justify-center">
+          {/* <div className="flex justify-center">
             <GradientButton variant="variant" className="flex items-center">
               <a href="https://tally.so/r/mR41VP" target="_blank">
                 Join as trader
               </a>
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </GradientButton>
-          </div>
+          </div> */}
         </div>
       </section>
 

@@ -131,8 +131,9 @@ export function HeroGeometric({
             animate="visible"
           >
             <p className="text-base sm:text-lg md:text-xl text-slate-300 mb-8 leading-relaxed font-light tracking-wide">
-              Ideosphere harnesses the power of prediction markets to fund
-              research
+              Where scientists, technologists, traders, and forecasters
+              collaborate to fund discovery through decentralized prediction and
+              validation.
             </p>
 
             <GradientButton
@@ -140,7 +141,10 @@ export function HeroGeometric({
               onClick={() => setIsVideoModalOpen(true)}
             >
               <span className="relative z-10 flex items-center">
-                <a onClick={() => setIsVideoModalOpen(true)}>Watch the video</a>
+                {/* <a onClick={() => setIsVideoModalOpen(true)}>Watch the video</a> */}
+                <a href="https://tally.so/r/jaDaN9" target="_blank">
+                  Join the waitlist
+                </a>
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </GradientButton>
@@ -159,7 +163,7 @@ export function HeroGeometric({
         </motion.div>
       </div>
 
-      {isVideoModalOpen && (
+      {/* {isVideoModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
           <div className="relative w-full h-full max-w-7xl max-h-[80vh] aspect-video">
             <iframe
@@ -178,7 +182,7 @@ export function HeroGeometric({
             </button>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/80 pointer-events-none" />

@@ -150,7 +150,7 @@ const FAQ = ({ question, answer }) => (
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="relative z-10 flex items-center justify-between">
-          <h3 className="text-lg text-white group-hover:translate-x-1 transition-transform duration-300">
+          <h3 className="text-lg text-white text-left group-hover:translate-x-1 transition-transform duration-300">
             {question}
           </h3>
           <ChevronDown className="w-5 h-5 text-cyan-400 transform transition-transform duration-300 group-data-[state=open]:rotate-180" />
@@ -176,9 +176,9 @@ const Index = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <img
-                src="https://res.cloudinary.com/dk9mn4cvz/image/upload/v1741238231/Ideosphere-Logo_qld98r.svg"
+                src="/ideosphere-logo-text.png"
                 alt="Ideosphere Logo"
-                className="h-5"
+                className="h-10"
               />
             </div>
             {/* Removed the button from the top right */}
@@ -319,25 +319,23 @@ const Index = () => {
           <div className="space-y-4">
             <FAQ
               question="What is Ideosphere and how does it work?"
-              answer="Ideosphere is a pioneering platform that connects scientific research with prediction markets. It allows traders to bet on research outcomes while simultaneously providing funding for researchers. The platform creates a unique ecosystem where market forces help drive scientific progress."
+              answer="Ideosphere connects forecasting with funding. Researchers & technologists submit hypotheses. The community forecasts feasibility and pledges funds to projects they support. When projects reach verification milestones, prediction markets track and validate their progress."
             />
             <FAQ
-              question="How do researchers receive funding through prediction markets?"
-              answer="Researchers receive funding through a percentage of trading fees and market activity on their research predictions. Every time traders place bets or provide liquidity for research outcomes, a portion of those transactions goes directly to funding the research project. This creates a continuous funding stream based on market interest."
+              question="How do researchers & technologists receive funding?"
+              answer="Researchers & technologists receive funding from community members who pledge money to projects. When a project shows promise, contributors fund its verification method (the experiment or study that tests the hypothesis). Funds are held in smart contracts and released as projects reach milestones. Successful projects can become prediction markets."
             />
             <FAQ
-              question="How do you ensure the validity of research outcomes?"
-              answer="We use an optimistic oracle system where researchers submit their findings which can then be challenged by domain experts. Here's how it works:
-
-1. Researchers submit their scientific claims
-2. A dispute period follows where experts can verify or challenge the findings
-3. Financial incentives encourage accurate reporting (rewards) and discourage false claims (penalties)
-
-This creates a transparent system where the scientific community's expertise, combined with economic incentives, ensures reliable verification of research outcomes."
+              question="How do you ensure the validity of outcomes?"
+              answer="We use an optimistic oracle system to verify results. Researchers & technologists submit findings. Domain experts can challenge these findings during a dispute period. Financial and reputational incentives reward accurate reports and penalize false claims. This combines peer validation with economic incentives."
             />
             <FAQ
-              question="How do researchers submit projects and what research areas do you support?"
-              answer="Researchers can submit their projects through our online portal after creating an account. We support a wide range of research areas including life sciences, physics, chemistry, and computer science. Each submission undergoes a review process to ensure it meets our criteria for market creation, including clear outcome metrics and timeline feasibility."
+              question="How does one submit projects and what fields do you support?"
+              answer="Researchers & technologists submit proposals through our portal. Projects need a clear hypothesis, a verification method, and a measurable timeline. We support all falsifiable domains: life sciences, materials, physics, chemistry, computer science, and AI. After approval, the community forecasts and funds each project."
+            />
+            <FAQ
+              question="How is Ideosphere different from traditional prediction markets or funding platforms?"
+              answer="Most prediction markets exist for speculation. Ideosphere uses markets for discovering high impact feasible early-stage R&D projects. Forecasts guide where community funding flows. By connecting forecasting, crowdfunding, and validation, we fund ideas and make them a reality."
             />
           </div>
           <div className="mt-16 text-center">
@@ -364,9 +362,9 @@ This creates a transparent system where the scientific community's expertise, co
           <div className="flex flex-col items-center text-center">
             <div className="mb-6">
               <img
-                src="https://res.cloudinary.com/dk9mn4cvz/image/upload/v1741238231/Ideosphere-Logo_qld98r.svg"
+                src="/ideosphere-logo-text.png"
                 alt="Ideosphere Logo"
-                className="h-3.5"
+                className="h-7"
               />
             </div>
             <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-8">

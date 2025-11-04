@@ -301,7 +301,7 @@ const Index = () => {
             <TraderFeatureCard
               icon={Microscope}
               title="Disrupt the funding paradigm"
-              description="Traditional funding methods are inefficient and slow. Your market participation creates a more dynamic funding mechanism that lets researchers & technologists focus on breakthroughs instead of grant applications."
+              description="Traditional funding methods are inefficient and slow. Your market participation creates a more dynamic funding mechanism that lets innovators focus on breakthroughs instead of grant applications."
             />
           </div>
 
@@ -367,19 +367,19 @@ const Index = () => {
           <div className="space-y-4">
             <FAQ
               question="What is Ideosphere and how does it work?"
-              answer="Ideosphere connects forecasting with funding. Researchers & technologists submit hypotheses. The community forecasts feasibility and pledges funds to projects they support. When projects reach verification milestones, prediction markets track and validate their progress."
+              answer="Ideosphere connects forecasting with funding. Innovators submit proposals. The community forecasts feasibility and pledges funds to projects they support. When projects reach verification milestones, prediction markets track and validate their progress."
             />
             <FAQ
-              question="How do researchers & technologists receive funding?"
-              answer="Researchers & technologists receive funding from community members who pledge money to projects. When a project shows promise, contributors fund its verification method (the experiment or study that tests the hypothesis). Funds are held in smart contracts and released as projects reach milestones. Successful projects can become prediction markets."
+              question="How do innovators receive funding?"
+              answer="Innovators receive funding from community members who pledge money to projects. When a project shows promise, contributors fund its verification method (the experiment or study that tests the hypothesis). Funds are held in smart contracts and released as projects reach milestones. Successful projects can become prediction markets."
             />
             <FAQ
               question="How do you ensure the validity of outcomes?"
-              answer="We use an optimistic oracle system to verify results. Researchers & technologists submit findings. Domain experts can challenge these findings during a dispute period. Financial and reputational incentives reward accurate reports and penalize false claims. This combines peer validation with economic incentives."
+              answer="We use an optimistic oracle system to verify results. Innovators submit findings. Domain experts can challenge these findings during a dispute period. Financial and reputational incentives reward accurate reports and penalize false claims. This combines peer validation with economic incentives."
             />
             <FAQ
               question="How does one submit projects and what fields do you support?"
-              answer="Researchers & technologists submit proposals through our portal. Projects need a clear hypothesis, a verification method, and a measurable timeline. We support all falsifiable domains: life sciences, materials, physics, chemistry, computer science, and AI. After approval, the community forecasts and funds each project."
+              answer="Innovators submit proposals through our portal. Projects need a clear hypothesis, a verification method, and a measurable timeline. We support all falsifiable domains: life sciences, materials, physics, chemistry, computer science, and AI. After approval, the community forecasts and funds each project."
             />
             <FAQ
               question="How is Ideosphere different from traditional prediction markets or funding platforms?"

@@ -131,9 +131,8 @@ export function HeroGeometric({
             animate="visible"
           >
             <p className="text-base sm:text-lg md:text-xl text-slate-300 mb-8 leading-relaxed font-light tracking-wide">
-              Where scientists, technologists, traders, and forecasters
-              collaborate to fund discovery through decentralized prediction and
-              validation.
+              Where innovators and traders collaborate to fund discovery through
+              decentralized prediction and validation.
             </p>
 
             <GradientButton

@@ -22,12 +22,12 @@ export function PredictionMarketCard() {
           {/* Content */}
           <div className="flex-1 mt-4 space-y-4">
             <div className="text-xl font-medium text-white">
-              AI Capabilities
+              Open-Source AI Capabilities
             </div>
 
             <div className="text-lg text-slate-200 font-medium leading-tight">
-              Will an open-source AI model outperform GPT-4 on the MMLU
-              benchmark by March 31, 2026?
+              Will our lab's model outperform GPT-4 on the MMLU benchmark by
+              March 31, 2026?
             </div>
 
             {/* Market Stats */}

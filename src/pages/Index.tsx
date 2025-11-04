@@ -196,21 +196,69 @@ const Index = () => {
       {/* Researchers Section */}
       <section className="relative py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-normal mb-12 tracking-tight">
-            For Scientists & Technologists
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-4xl font-normal mb-8 tracking-tight">
+              For Innovators
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
             <FeatureCard
               icon={Microscope}
-              title="Propose & Validate"
+              title="Receive Evaluation"
               description="Turn hypotheses into signals of confidence. Submit or support research ideas that the community tests for feasibility, risk, and impact, turning uncertainty into measurable probability. Instead of applying for grants, participants fund the methods, experiments, and success criteria that prove or disprove each idea."
             />
             <FeatureCard
               icon={Network}
-              title="Market & Evolve"
+              title="Receive Funding"
               description="Ideosphere turns verified ideas into live markets that build cumulative credibility. When a project proves feasible, a prediction market tracks its progress and resolves automatically once success criteria are met. Forecasters and early backers earn rewards from market liquidity, and validated outcomes strengthen the network’s models, sharpening foresight and guiding smarter capital allocation."
             />
           </div>
+
+          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 rounded-xl p-8 mb-12">
+            <h3 className="text-2xl font-normal mb-4 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+              Benefits For Innovators
+            </h3>
+            <ul className="grid md:grid-cols-2 gap-6">
+              <li className="flex items-start space-x-3">
+                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
+                  <Network className="w-5 h-5" />
+                </div>
+                <span className="text-slate-300">
+                  Receive funding to accelerate your idea’s journey from concept
+                  to proof.
+                </span>
+              </li>
+              <li className="flex items-start space-x-3">
+                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
+                  <Network className="w-5 h-5" />
+                </div>
+                <span className="text-slate-300">
+                  Gain visibility for your ideas as the market surfaces
+                  underfunded, high-potential projects.
+                </span>
+              </li>
+              <li className="flex items-start space-x-3">
+                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
+                  <Network className="w-5 h-5" />
+                </div>
+                <span className="text-slate-300">
+                  View public forecasts that can help you assess your own
+                  project's viability.
+                </span>
+              </li>
+              <li className="flex items-start space-x-3">
+                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
+                  <Network className="w-5 h-5" />
+                </div>
+                <span className="text-slate-300">
+                  Join a community building a new economy where collective
+                  foresight funds discovery.
+                </span>
+              </li>
+            </ul>
+          </div>
+
           {/* <div className="mt-12 flex justify-center">
             <GradientButton className="flex items-center gap-2">
               <a href="https://tally.so/r/wL0qry" target="_blank">
@@ -227,7 +275,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
             <h2 className="text-4xl font-normal mb-8 tracking-tight">
-              For Traders & Forecasters
+              For Traders
             </h2>
             {/* <p className="text-xl text-slate-300 mb-6">
               Trade on the frontier of science and technology
@@ -285,8 +333,8 @@ const Index = () => {
                   <Network className="w-5 h-5" />
                 </div>
                 <span className="text-slate-300">
-                  Earn rewards, prestige, and tokens by turning foresight into
-                  the fuel of discovery.
+                  Earn rewards by forecasting innovation proposal impact and
+                  feasibility.
                 </span>
               </li>
               <li className="flex items-start space-x-3">

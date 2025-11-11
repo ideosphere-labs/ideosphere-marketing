@@ -14,8 +14,8 @@ const DiscoveryMechanismSection = () => {
             How Ideas Become Funded Projects
           </h2>
           <p className="text-lg text-slate-400">
-            Our four-stage pipeline transforms proposals into validated, funded
-            research through community intelligence and transparent markets.
+            Our four-stage pipeline transforms proposals into validated funded
+            projects through community intelligence and transparent markets.
           </p>
         </div>
 
@@ -52,7 +52,7 @@ const DiscoveryMechanismSection = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-2">
-                      Submit Proposal
+                      Proposal Submission
                     </h3>
                     <p className="text-slate-400 leading-relaxed">
                       Innovators submit research hypotheses with clear

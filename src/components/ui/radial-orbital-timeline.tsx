@@ -262,7 +262,7 @@ export default function RadialOrbitalTimeline({
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-cyan-400/50"></div>
                     <CardHeader className="pb-2">
                       <div className="flex justify-between items-center">
-                        <Badge
+                        {/* <Badge
                           className={`px-2 text-xs ${getStatusStyles(
                             item.status
                           )}`}
@@ -272,7 +272,7 @@ export default function RadialOrbitalTimeline({
                             : item.status === "in-progress"
                             ? "IN PROGRESS"
                             : "PENDING"}
-                        </Badge>
+                        </Badge> */}
                         <span className="text-xs font-mono text-slate-400">
                           {item.date}
                         </span>
@@ -285,13 +285,15 @@ export default function RadialOrbitalTimeline({
                       <p>{item.content}</p>
 
                       {/* Energy level */}
-                      <div className="mt-4 pt-3 border-t border-slate-800/50">
+                      {/* <div className="mt-4 pt-3 border-t border-slate-800/50">
                         <div className="flex justify-between items-center text-xs mb-1">
                           <span className="flex items-center text-slate-400">
                             <Zap size={10} className="mr-1" />
                             Energy Level
                           </span>
-                          <span className="font-mono text-cyan-400">{item.energy}%</span>
+                          <span className="font-mono text-cyan-400">
+                            {item.energy}%
+                          </span>
                         </div>
                         <div className="w-full h-1 bg-slate-800/50 rounded-full overflow-hidden">
                           <div
@@ -299,7 +301,7 @@ export default function RadialOrbitalTimeline({
                             style={{ width: `${item.energy}%` }}
                           ></div>
                         </div>
-                      </div>
+                      </div> */}
 
                       {/* Connected nodes */}
                       {item.relatedIds.length > 0 && (

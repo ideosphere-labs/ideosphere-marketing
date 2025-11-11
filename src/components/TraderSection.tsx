@@ -5,50 +5,50 @@ const STYLE_ID = "trader-animations";
 const traderFlows = [
   {
     id: "01",
-    variant: "orbit",
-    meta: "Frontier",
-    title: "Trade On A New Frontier",
+    variant: "relay",
+    meta: "Trade",
+    title: "Turn Discovery Into A Market",
     description:
-      "Forecast what's next by trading on the frontier of science and technology. Hedge on research outcomes, clinical trials, and emerging breakthroughs to profit from your foresight and gain alpha from your domain expertise.",
-    statLabel: "Market access",
-    statValue: "24/7",
+      "Ideosphere converts emerging research and technology into a tradable frontier. Go long on innovation, hedge against uncertainty, and capture value from the ideas defining tomorrow’s breakthroughs.",
+    statLabel: "",
+    statValue: "",
   },
   {
     id: "02",
-    variant: "relay",
-    meta: "Discovery",
-    title: "Forecast Outcomes Across Domains",
-    description:
-      "Discover and evaluate high-impact, overlooked research proposals before they're funded. Perform due diligence across science and technology—from biotech to AI—and gain shared ownership in projects you help surface and validate.",
-    statLabel: "Active domains",
-    statValue: "12+",
-  },
-  {
-    id: "03",
     variant: "spark",
-    meta: "Profit",
-    title: "Profit from Verified Progress",
+    meta: "Forecast",
+    title: "Price The Future Of Science",
     description:
-      "When projects reach their milestones, markets resolve transparently on-chain. Top forecasters earn rewards, reputation, and influence, while a share of market activity fuels new community-funded research.",
-    statLabel: "Avg. forecaster ROI",
-    statValue: "+42%",
+      "Spot high-impact discoveries before they surface. Earn rewards for accurate foresight and amplify your edge in the markets funding the next wave of progress.",
+    statLabel: "",
+    statValue: "",
   },
-  {
-    id: "04",
-    variant: "wave",
-    meta: "Disruption",
-    title: "Disrupt the Funding Paradigm",
-    description:
-      "Traditional funding methods are inefficient and slow. Your market participation creates a more dynamic funding mechanism that lets innovators focus on breakthroughs instead of grant applications.",
-    statLabel: "Time to funding",
-    statValue: "~14 days",
-  },
+  // {
+  //   id: "02",
+  //   variant: "relay",
+  //   meta: "Discovery",
+  //   title: "Forecast Outcomes Across Domains",
+  //   description:
+  //     "Discover and evaluate high-impact, overlooked research proposals before they're funded. Perform due diligence across science and technology—from biotech to AI—and gain shared ownership in projects you help surface and validate.",
+  //   statLabel: "Active domains",
+  //   statValue: "12+",
+  // },
+  // {
+  //   id: "02",
+  //   variant: "wave",
+  //   meta: "Impact Markets",
+  //   title: "Help rewrite The Rules of Research Funding",
+  //   description:
+  //     "Traditional grants crawl; markets move. Your participation fuels a faster, merit-driven funding engine that rewards breakthroughs instead of bureaucracy.",
+  //   statLabel: "",
+  //   statValue: "",
+  // },
 ];
 
 const traderMetrics = [
-  { label: "Trade on tech tree", value: "Capture alpha" },
-  { label: "Hedge outcomes", value: "Clinical trials" },
-  { label: "Earn rewards", value: "Top forecasters" },
+  { label: "Trade", value: "Knowledge" },
+  { label: "Earn", value: "Rewards" },
+  { label: "Fund", value: "Research" },
 ];
 
 const palettes = {
@@ -499,9 +499,9 @@ function TraderSection() {
             <p
               className={`max-w-2xl text-sm sm:text-base md:text-lg ${palette.muted}`}
             >
-              Your predictions turn insight into transparent, data-driven
-              signals that surface credible discoveries before they reach the
-              mainstream.
+              What if you could trade scientific hypotheses? Go long on
+              synthetic biology, or short quantum? Or hedge against the outcomes
+              of clinical drugs trials?
             </p>
           </div>
         </header>

@@ -7,29 +7,28 @@ const innovatorFlows = [
     id: "01",
     variant: "orbit",
     meta: "Evaluation",
-    title: "Receive Evaluation",
+    title: "Price Uncertainty",
     description:
-      "Turn hypotheses into signals of confidence. Submit or support research ideas that the community tests for feasibility, risk, and impact, turning uncertainty into measurable probability. Instead of applying for grants, participants fund the methods, experiments, and success criteria that prove or disprove each idea.",
-    statLabel: "Avg. evaluation time",
-    statValue: "7 days",
+      "Submit research ideas that the community stress-tests for feasibility, risk, and impact converting uncertainty into probability.",
+    statLabel: "",
+    statValue: "",
   },
   {
     id: "02",
     variant: "wave",
     meta: "Funding",
-    title: "Receive Funding",
+    title: "Trade Proof For Capital",
     description:
-      "Ideosphere turns verified ideas into live markets that build cumulative credibility. When a project proves feasible, a prediction market tracks its progress and resolves automatically once success criteria are met. Forecasters and early backers earn rewards from market liquidity.",
-    statLabel: "Projects funded",
-    statValue: "48+",
+      "Replace grant cycles with markets that fund results. Every validated hypothesis earns liquidity and every failure, valuable data",
+    statLabel: "",
+    statValue: "",
   },
 ];
 
 const innovatorMetrics = [
-  { label: "Receive funding", value: "Concept to proof" },
-  { label: "Gain visibility", value: "High-potential" },
-  { label: "View forecasts", value: "Assess viability" },
-  { label: "Join community", value: "Fund discovery" },
+  { label: "Submit", value: "Unpriced Idea" },
+  { label: "Evaluate", value: "Stress-Tested Hypothesis" },
+  { label: "Fund", value: "Risk-adjusted Conviction" },
 ];
 
 const palettes = {
@@ -475,13 +474,15 @@ function InnovatorsSection() {
             <h1
               className={`text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl ${palette.heading}`}
             >
-              Turn your research ideas into funded projects
+              Turn ideas into funded projects
             </h1>
             <p
               className={`max-w-2xl text-sm sm:text-base md:text-lg ${palette.muted}`}
             >
-              Submit proposals, receive community evaluation, and secure funding
-              through prediction markets that validate your breakthrough ideas.
+              What if your research could find believers before it finds
+              investors? If your next breakthrough could attract funding the
+              moment people believe in it? If a market could prove your idea's
+              value before you ever run the experiment?
             </p>
           </div>
         </header>
@@ -499,7 +500,7 @@ function InnovatorsSection() {
         </div>
 
         <div
-          className={`bento3-innovators-metrics grid grid-cols-1 gap-4 rounded-[28px] border p-6 sm:grid-cols-2 md:grid-cols-4 ${palette.cardBorder} ${palette.card}`}
+          className={`bento3-innovators-metrics grid grid-cols-1 gap-4 rounded-[28px] border p-6 sm:grid-cols-2 md:grid-cols-3 ${palette.cardBorder} ${palette.card}`}
         >
           {innovatorMetrics.map((metric) => (
             <div

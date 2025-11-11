@@ -7,59 +7,64 @@ import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 const traderIncentivesData = [
   {
     id: 1,
-    title: "Discover",
+    title: "Trade",
     date: "Stage 1",
-    content: "Identify high-potential research proposals before they're funded. Early discovery means better positions.",
+    content:
+      "Take positions on emerging discoveries and profit from your insights.",
     category: "Discovery",
     icon: Target,
-    relatedIds: [2],
+    relatedIds: [],
     status: "completed" as const,
     energy: 100,
   },
   {
     id: 2,
-    title: "Evaluate",
+    title: "Forecast",
     date: "Stage 2",
-    content: "Analyze proposals using your domain expertise. Accurate forecasts build reputation and credibility.",
+    content:
+      "Evaluate proposals to surface emerging trends in discovery markets and earn rewards for sharpening the signal.",
     category: "Analysis",
     icon: TrendingUp,
-    relatedIds: [1, 3],
+    relatedIds: [],
     status: "completed" as const,
     energy: 90,
   },
   {
     id: 3,
-    title: "Trade",
+    title: "Earn Rewards",
     date: "Stage 3",
-    content: "Take positions in prediction markets. Your insights drive market prices and funding allocation.",
+    content:
+      "Earn rewards from your activity in discovery markets to boost your profits across your trading positions.",
     category: "Markets",
     icon: DollarSign,
-    relatedIds: [2, 4],
+    relatedIds: [],
     status: "in-progress" as const,
     energy: 60,
   },
   {
     id: 4,
-    title: "Validate",
+    title: "Fund",
     date: "Stage 4",
-    content: "Projects reach milestones and markets resolve. Accurate forecasters earn rewards on-chain.",
+    content:
+      "Crowdfund risk-adjusted proposals on the discovery market and take ownership in the breakthoughs you identify.",
     category: "Resolution",
     icon: Award,
-    relatedIds: [3, 5],
+    relatedIds: [],
     status: "pending" as const,
     energy: 30,
   },
-  {
-    id: 5,
-    title: "Compound",
-    date: "Stage 5",
-    content: "Profits and reputation compound. Top forecasters gain influence in future project selection.",
-    category: "Growth",
-    icon: Rocket,
-    relatedIds: [4],
-    status: "pending" as const,
-    energy: 10,
-  },
+  // {
+  //   id: 5,
+  //   title: "Compound",
+  //   date: "Stage 5",
+  //   content:
+  //     "Profits and reputation compound. Top forecasters gain influence in future project selection.",
+  //   category: "Growth",
+  //   icon: Rocket,
+  //   relatedIds: [4],
+  //   status: "pending" as const,
+  //   energy: 10,
+  // },
 ];
 
 const TraderIncentivesSection = () => {
@@ -73,10 +78,11 @@ const TraderIncentivesSection = () => {
             Trader Incentives
           </div>
           <h2 className="text-4xl font-semibold mb-8 tracking-tight text-white">
-            How Forecasters Drive Discovery
+            From Trading To Forecasting To Funding
           </h2>
           <p className="text-lg text-slate-400">
-            Your market participation creates signals that surface breakthrough research and allocate funding efficiently. Each accurate forecast builds reputation and earns rewards.
+            Your market participation creates signals that surface breakthrough
+            research and helps allocate funding efficiently.
           </p>
         </div>
 
@@ -96,10 +102,12 @@ const TraderIncentivesSection = () => {
                 <TrendingUp className="w-6 h-6 text-cyan-400" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">
-                Alpha Generation
+                Monetise Insight Before Consensus
               </h3>
               <p className="text-slate-400 leading-relaxed">
-                Leverage your domain expertise to identify breakthrough research before mainstream markets. Capture alpha from early positions in high-impact projects.
+                Convert expertise into early conviction. Detect emerging signals
+                in underpriced research and profit from foresight while others
+                wait for proof.
               </p>
             </div>
           </div>
@@ -111,10 +119,12 @@ const TraderIncentivesSection = () => {
                 <Award className="w-6 h-6 text-cyan-400" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">
-                Reputation Rewards
+                Earn Credibility That Compounds{" "}
               </h3>
               <p className="text-slate-400 leading-relaxed">
-                Build verifiable on-chain reputation through accurate forecasts. Top forecasters earn influence in project selection and governance decisions.
+                Each accurate prediction strengthens your on-chain reputation.
+                Influence funding decisions and shape which discoveries move
+                from hypothesis to breakthrough.
               </p>
             </div>
           </div>
@@ -126,10 +136,12 @@ const TraderIncentivesSection = () => {
                 <Rocket className="w-6 h-6 text-cyan-400" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-3">
-                Compounding Returns
+                Turn Accuracy Into Control
               </h3>
               <p className="text-slate-400 leading-relaxed">
-                Successful predictions compound over time. As your track record grows, so does your influence in shaping the future of scientific funding.
+                Profitable forecasts feed your influence; influence directs
+                better projects; better projects yield new opportunities for
+                alpha. The loop that rewards being right early.
               </p>
             </div>
           </div>

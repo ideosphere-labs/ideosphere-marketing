@@ -60,21 +60,21 @@ const Index = () => {
       {/* Hero Section - Replaced with HeroGeometric */}
       <HeroGeometric
         badge="Project submissions open"
-        title1="The world’s first"
+        title1="The World’s First"
         title2="Forecast-to-Funding Network"
       />
 
       {/* Traders Section */}
       <TraderSection />
 
+      {/* Trader Incentives Section */}
+      <TraderIncentivesSection />
+
       {/* Innovators Section */}
       <InnovatorsSection />
 
       {/* Discovery Mechanism Section */}
       <DiscoveryMechanismSection />
-
-      {/* Trader Incentives Section */}
-      <TraderIncentivesSection />
 
       {/* Team Section */}
       <IdeosphereTeamSection />

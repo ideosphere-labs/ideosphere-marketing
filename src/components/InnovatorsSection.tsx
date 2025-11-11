@@ -474,7 +474,7 @@ function InnovatorsSection() {
             <h1
               className={`text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl ${palette.heading}`}
             >
-              Turn ideas into funded projects
+              Turn Ideas Into Funded Projects
             </h1>
             <p
               className={`max-w-2xl text-sm sm:text-base md:text-lg ${palette.muted}`}

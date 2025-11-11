@@ -27,15 +27,18 @@ export default function IdeosphereTeamSection() {
   ];
 
   const mainSocialLinks = [
-    { icon: Twitter, href: "#" },
-    { icon: Linkedin, href: "#" },
-    { icon: Github, href: "#" },
+    { icon: Twitter, href: "https://x.com/_ideosphere" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/company/theideosphere/posts/?feedView=all",
+    },
+    // { icon: Github, href: "#" },
   ];
 
   return (
     <TeamSection
-      title="Our Team"
-      description="We're a diverse team of scientists, engineers, and market designers united by the mission to revolutionize how breakthrough research gets funded. Our expertise spans prediction markets, blockchain technology, and scientific validation."
+      title="Team"
+      description="We're a small and fiery team working at the intersection of prediction markets, forecasting and crowdfunding to dream up new ways of funding science and innovation"
       members={teamMembers}
       socialLinksMain={mainSocialLinks}
     />

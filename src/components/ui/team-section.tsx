@@ -83,7 +83,7 @@ export const TeamSection = React.forwardRef<HTMLDivElement, TeamSectionProps>(
                 {title}
               </div>
               <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                Meet the Team
+                Who We Are
               </h2>
               <p className="max-w-[700px] mx-auto text-lg text-slate-400">
                 {description}

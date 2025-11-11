@@ -1,9 +1,5 @@
 "use client";
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -32,20 +28,18 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div
-      className="w-full bg-slate-950 font-sans md:px-10"
-      ref={containerRef}
-    >
+    <div className="w-full bg-slate-950 font-sans md:px-10" ref={containerRef}>
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
         <div className="inline-flex items-center gap-3 rounded-full px-3 py-1 text-xs uppercase tracking-[0.4em] text-slate-300 mb-6">
           <span className="h-1 w-14 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
           Roadmap
         </div>
         <h2 className="text-4xl md:text-5xl font-semibold mb-4 text-white max-w-4xl">
-          Building the Future of Scientific Funding
+          Beyond Prediction Markets
         </h2>
         <p className="text-slate-400 text-base md:text-lg max-w-2xl">
-          Our journey from concept to reality. Track our progress as we revolutionize how breakthrough research gets funded through prediction markets and community intelligence.
+          We’re building the next layer of the foresight economy from funding
+          primitives to full research capital markets.
         </p>
       </div>
 

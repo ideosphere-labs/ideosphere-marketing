@@ -8,14 +8,14 @@ const DiscoveryMechanismSection = () => {
         <div className="max-w-3xl mb-16 text-center mx-auto">
           <div className="inline-flex items-center gap-3 rounded-full px-3 py-1 text-xs uppercase tracking-[0.4em] text-slate-300 mb-6">
             <span className="h-1 w-14 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
-            Discovery Mechanism
+            Discovery Market Mechanism
           </div>
           <h2 className="text-4xl font-semibold mb-8 tracking-tight text-white">
             How Ideas Become Funded Projects
           </h2>
           <p className="text-lg text-slate-400">
-            Our four-stage pipeline transforms proposals into validated funded
-            projects through community intelligence and transparent markets.
+            Our four-stage pipeline transforms ideas into validated projects
+            through community intelligence and transparent markets.
           </p>
         </div>
 
@@ -25,7 +25,7 @@ const DiscoveryMechanismSection = () => {
           <div className="flex justify-center">
             <IncentiveMechanism
               title="Community-driven validation pipeline"
-              circleText="FLOW"
+              circleText="IDEA"
               badgeTexts={{
                 first: "Submit",
                 second: "Evaluate",
@@ -34,7 +34,7 @@ const DiscoveryMechanismSection = () => {
               }}
               buttonTexts={{
                 first: "Innovators",
-                second: "Community",
+                second: "Traders",
               }}
               lightColor="#22d3ee"
             />
@@ -55,10 +55,8 @@ const DiscoveryMechanismSection = () => {
                       Proposal Submission
                     </h3>
                     <p className="text-slate-400 leading-relaxed">
-                      Innovators submit research hypotheses with clear
-                      verification methods and measurable success criteria. Each
-                      proposal includes the experimental design needed to prove
-                      or disprove the idea.
+                      Submit proposals with clear success criteria and a
+                      strategy for proving or disproving the idea.
                     </p>
                   </div>
                 </div>
@@ -78,10 +76,8 @@ const DiscoveryMechanismSection = () => {
                       Community Evaluation
                     </h3>
                     <p className="text-slate-400 leading-relaxed">
-                      Domain experts and community members forecast the
-                      proposal's feasibility, impact, and risk. Aggregated
-                      predictions surface the most promising projects and
-                      identify potential issues early.
+                      Traders forecast feasibility, impact, and risk. Aggregated
+                      predictions surface the most promising projects early.
                     </p>
                   </div>
                 </div>
@@ -101,10 +97,8 @@ const DiscoveryMechanismSection = () => {
                       Funding Allocation
                     </h3>
                     <p className="text-slate-400 leading-relaxed">
-                      High-confidence proposals receive community funding
-                      through smart contracts. Funds are released as projects
-                      hit predefined milestones, ensuring accountability and
-                      progress tracking throughout the research cycle.
+                      High-confidence proposals receive crowdfunding through
+                      smart contracts.
                     </p>
                   </div>
                 </div>
@@ -124,10 +118,8 @@ const DiscoveryMechanismSection = () => {
                       Outcome Validation
                     </h3>
                     <p className="text-slate-400 leading-relaxed">
-                      Results are verified through our optimistic oracle system.
-                      Successful projects become prediction markets, rewarding
-                      accurate forecasters and building cumulative credibility
-                      for future innovations.
+                      Results are verified through our optimistic oracle system
+                      and long-term projects become prediction markets.
                     </p>
                   </div>
                 </div>

@@ -137,7 +137,7 @@ const Index = () => {
                 className="h-7"
               />
             </div>
-            <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-8">
+            {/* <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-8">
               <a
                 href="#"
                 className="text-sm text-slate-400 hover:text-white transition-colors"
@@ -168,7 +168,7 @@ const Index = () => {
               >
                 Privacy
               </a>
-            </nav>
+            </nav> */}
             <p className="text-sm text-slate-500">
               © {new Date().getFullYear()} Ideosphere. All rights reserved.
             </p>

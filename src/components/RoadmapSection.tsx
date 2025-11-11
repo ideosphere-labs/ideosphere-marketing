@@ -37,17 +37,15 @@ export function RoadmapSection() {
                 Launch Community Alpha
               </h4>
               <p className="text-slate-400 text-sm">
-                Early access program for innovators and traders to test the
-                platform.
+                Early access to engage with the platform using testnet tokens.
               </p>
             </div>
             <div className="rounded-xl bg-slate-900/50 border border-slate-800/50 p-6 hover:border-cyan-500/50 transition-all duration-300">
               <h4 className="text-white font-semibold mb-2">
-                Finalize Platform
+                Finalize Prediction Market Platform
               </h4>
               <p className="text-slate-400 text-sm">
-                Core infrastructure deployed on testnet with initial prediction
-                markets.
+                Core infrastructure deployed with initial prediction markets.
               </p>
             </div>
           </div>
@@ -87,12 +85,13 @@ export function RoadmapSection() {
                 Launch Community Beta
               </h4>
               <p className="text-slate-400 text-sm">
-                Expand access to early-stage platform.
+                Expand access to early-stage platform and transition to
+                real-money markets.
               </p>
             </div>
             <div className="rounded-xl bg-slate-900/50 border border-slate-800/50 p-6 hover:border-cyan-500/50 transition-all duration-300">
               <h4 className="text-white font-semibold mb-2">
-                Discovery Markets
+                Finalize Discovery Market Platform
               </h4>
               <p className="text-slate-400 text-sm">
                 Roll out first discovery market mechanism for live feedback.

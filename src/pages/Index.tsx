@@ -1,146 +1,17 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { GradientButton } from "@/components/ui/gradient-button";
-import {
-  ArrowRight,
-  Network,
-  Microscope,
-  Zap,
-  Trophy,
-  ChevronDown,
-} from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { HeroGeometric } from "@/components/HeroGeometric";
-import { PredictionMarketCard } from "@/components/PredictionMarketCard";
-
-// Scientific background animation
-const NetworkBackground = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <div className="absolute w-full h-full opacity-20">
-        {/* DNA Helix */}
-        <svg className="absolute w-full h-full" viewBox="0 0 100 100">
-          {[...Array(10)].map((_, i) => (
-            <g
-              key={`helix-${i}`}
-              className="animate-float"
-              style={{ animationDelay: `${i * 0.2}s` }}
-            >
-              <path
-                d={`M ${10 + i * 8} ${10 + Math.sin(i) * 20} Q ${20 + i * 8} ${
-                  30 + Math.cos(i) * 20
-                } ${30 + i * 8} ${50 + Math.sin(i) * 20}`}
-                className="text-cyan-500"
-                stroke="currentColor"
-                strokeWidth="0.2"
-                fill="none"
-              >
-                <animate
-                  attributeName="d"
-                  dur="10s"
-                  repeatCount="indefinite"
-                  values={`
-                    M ${10 + i * 8} ${10 + Math.sin(i) * 20} Q ${20 + i * 8} ${
-                    30 + Math.cos(i) * 20
-                  } ${30 + i * 8} ${50 + Math.sin(i) * 20};
-                    M ${10 + i * 8} ${20 + Math.cos(i) * 20} Q ${20 + i * 8} ${
-                    40 + Math.sin(i) * 20
-                  } ${30 + i * 8} ${60 + Math.cos(i) * 20};
-                    M ${10 + i * 8} ${10 + Math.sin(i) * 20} Q ${20 + i * 8} ${
-                    30 + Math.cos(i) * 20
-                  } ${30 + i * 8} ${50 + Math.sin(i) * 20}
-                  `}
-                />
-              </path>
-              <circle r="0.5" className="text-blue-400" fill="currentColor">
-                <animateMotion
-                  dur={`${8 + i * 0.5}s`}
-                  repeatCount="indefinite"
-                  path={`M ${10 + i * 8} ${10 + Math.sin(i) * 20} Q ${
-                    20 + i * 8
-                  } ${30 + Math.cos(i) * 20} ${30 + i * 8} ${
-                    50 + Math.sin(i) * 20
-                  }`}
-                />
-              </circle>
-            </g>
-          ))}
-        </svg>
-
-        {/* Floating Particles */}
-        <svg className="absolute w-full h-full" viewBox="0 0 100 100">
-          {[...Array(20)].map((_, i) => (
-            <circle
-              key={`particle-${i}`}
-              cx={Math.random() * 100}
-              cy={Math.random() * 100}
-              r={0.3 + Math.random() * 0.5}
-              className="text-cyan-400"
-              fill="currentColor"
-            >
-              <animate
-                attributeName="opacity"
-                dur={`${3 + Math.random() * 2}s`}
-                values="0;1;0"
-                repeatCount="indefinite"
-                begin={`${Math.random() * 2}s`}
-              />
-              <animate
-                attributeName="cy"
-                dur={`${10 + Math.random() * 5}s`}
-                values={`${Math.random() * 100};${Math.random() * 100}`}
-                repeatCount="indefinite"
-                begin={`${Math.random() * 2}s`}
-              />
-            </circle>
-          ))}
-        </svg>
-      </div>
-    </div>
-  );
-};
-
-// Enhanced Feature card component with more animations
-const FeatureCard = ({ title, description, icon: Icon }) => (
-  <div className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 p-8 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1">
-    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-    <div className="relative z-10">
-      <div className="rounded-full w-12 h-12 bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-        <Icon className="w-6 h-6 text-cyan-400 group-hover:rotate-12 transition-transform duration-300" />
-      </div>
-      <h3 className="text-xl font-semibold text-white mb-4 group-hover:translate-x-1 transition-transform duration-300">
-        {title}
-      </h3>
-      <p className="text-slate-400 leading-relaxed transform transition-all duration-300 group-hover:text-slate-300">
-        {description}
-      </p>
-    </div>
-  </div>
-);
-
-// Enhanced Trader Feature Card
-const TraderFeatureCard = ({ icon: Icon, title, description }) => (
-  <div className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 p-8 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1">
-    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-    <div className="relative z-10">
-      <div className="rounded-full w-12 h-12 bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-        <Icon className="w-6 h-6 text-cyan-400 group-hover:rotate-12 transition-transform duration-300" />
-      </div>
-      <h3 className="text-xl font-semibold text-white mb-4 group-hover:translate-x-1 transition-transform duration-300">
-        {title}
-      </h3>
-      <p className="text-slate-400 leading-relaxed transform transition-all duration-300 group-hover:text-slate-300">
-        {description}
-      </p>
-    </div>
-  </div>
-);
+import { TraderSection } from "@/components/TraderSection";
+import { InnovatorsSection } from "@/components/InnovatorsSection";
+import { DiscoveryMechanismSection } from "@/components/DiscoveryMechanismSection";
+import { TraderIncentivesSection } from "@/components/TraderIncentivesSection";
+import { IdeosphereTeamSection } from "@/components/IdeosphereTeamSection";
+import RoadmapSection from "@/components/RoadmapSection";
 
 // Enhanced FAQ Component with expansion
 const FAQ = ({ question, answer }) => (
@@ -189,179 +60,30 @@ const Index = () => {
       {/* Hero Section - Replaced with HeroGeometric */}
       <HeroGeometric
         badge="Project submissions open"
-        title1="The world’s first"
+        title1="The World’s First"
         title2="Forecast-to-Funding Network"
       />
 
-      {/* Researchers Section */}
-      <section className="relative py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-16">
-            <h2 className="text-4xl font-normal mb-8 tracking-tight">
-              For Innovators
-            </h2>
-          </div>
+      {/* Traders Section */}
+      <TraderSection />
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <FeatureCard
-              icon={Microscope}
-              title="Receive Evaluation"
-              description="Turn hypotheses into signals of confidence. Submit or support research ideas that the community tests for feasibility, risk, and impact, turning uncertainty into measurable probability. Instead of applying for grants, participants fund the methods, experiments, and success criteria that prove or disprove each idea."
-            />
-            <FeatureCard
-              icon={Network}
-              title="Receive Funding"
-              description="Ideosphere turns verified ideas into live markets that build cumulative credibility. When a project proves feasible, a prediction market tracks its progress and resolves automatically once success criteria are met. Forecasters and early backers earn rewards from market liquidity, and validated outcomes strengthen the network’s models, sharpening foresight and guiding smarter capital allocation."
-            />
-          </div>
+      {/* Trader Incentives Section */}
+      <TraderIncentivesSection />
 
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 rounded-xl p-8 mb-12">
-            <h3 className="text-2xl font-normal mb-4 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-              Benefits For Innovators
-            </h3>
-            <ul className="grid md:grid-cols-2 gap-6">
-              <li className="flex items-start space-x-3">
-                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
-                  <Network className="w-5 h-5" />
-                </div>
-                <span className="text-slate-300">
-                  Receive funding to accelerate your idea’s journey from concept
-                  to proof.
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
-                  <Network className="w-5 h-5" />
-                </div>
-                <span className="text-slate-300">
-                  Gain visibility for your ideas as the market surfaces
-                  underfunded, high-potential projects.
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
-                  <Network className="w-5 h-5" />
-                </div>
-                <span className="text-slate-300">
-                  View public forecasts that can help you assess your own
-                  project's viability.
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
-                  <Network className="w-5 h-5" />
-                </div>
-                <span className="text-slate-300">
-                  Join a community building a new economy where collective
-                  foresight funds discovery.
-                </span>
-              </li>
-            </ul>
-          </div>
+      {/* Innovators Section */}
+      <InnovatorsSection />
 
-          {/* <div className="mt-12 flex justify-center">
-            <GradientButton className="flex items-center gap-2">
-              <a href="https://tally.so/r/wL0qry" target="_blank">
-                Submit a hypothesis
-              </a>
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </GradientButton>
-          </div> */}
-        </div>
-      </section>
+      {/* Discovery Mechanism Section */}
+      <DiscoveryMechanismSection />
 
-      {/* Enhanced Traders Section */}
-      <section className="relative py-24 bg-slate-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-16">
-            <h2 className="text-4xl font-normal mb-8 tracking-tight">
-              For Traders
-            </h2>
-            {/* <p className="text-xl text-slate-300 mb-6">
-              Trade on the frontier of science and technology
-            </p> */}
-          </div>
+      {/* Team Section */}
+      <IdeosphereTeamSection />
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <TraderFeatureCard
-              icon={Zap}
-              title="Trade On A New Frontier"
-              description="Forecast what’s next by trading on the frontier of science and technology. Hedge on research outcomes, clinical trials, and emerging breakthroughs to profit from your foresight and gain alpha from your domain expertise. Your predictions turn insight into transparent, data-driven signals that surface credible discoveries before they reach the mainstream."
-            />
-            <TraderFeatureCard
-              icon={Network}
-              title="Forecast Outcomes Across Domains"
-              description="Discover and evaluate high-impact, overlooked research proposals before they’re funded. Perform due diligence across science and technology—from biotech to AI—and gain shared ownership in projects you help surface and validate. Each assessment sharpens collective foresight and directs capital toward ideas that matter most."
-            />
-            <TraderFeatureCard
-              icon={Trophy}
-              title="Profit from Verified Progress"
-              description="When projects reach their milestones, markets resolve transparently on-chain. Top forecasters earn rewards, reputation, and influence, while a share of market activity fuels new community-funded research—building both prestige and impact with every accurate call."
-            />
-            <TraderFeatureCard
-              icon={Microscope}
-              title="Disrupt the funding paradigm"
-              description="Traditional funding methods are inefficient and slow. Your market participation creates a more dynamic funding mechanism that lets innovators focus on breakthroughs instead of grant applications."
-            />
-          </div>
-
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-800/50 rounded-xl p-8 mb-12">
-            <h3 className="text-2xl font-normal mb-4 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-              Benefits for Traders
-            </h3>
-            <ul className="grid md:grid-cols-2 gap-6">
-              <li className="flex items-start space-x-3">
-                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
-                  <Network className="w-5 h-5" />
-                </div>
-                <span className="text-slate-300">
-                  Trade on the tech tree and capture alpha before it becomes
-                  consensus.
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
-                  <Network className="w-5 h-5" />
-                </div>
-                <span className="text-slate-300">
-                  Hedge against industry outcomes such as clinical trials or
-                  research outcomes.
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
-                  <Network className="w-5 h-5" />
-                </div>
-                <span className="text-slate-300">
-                  Earn rewards by forecasting innovation proposal impact and
-                  feasibility.
-                </span>
-              </li>
-              <li className="flex items-start space-x-3">
-                <div className="rounded-full p-1 bg-cyan-500/10 text-cyan-400">
-                  <Network className="w-5 h-5" />
-                </div>
-                <span className="text-slate-300">
-                  Join a community shaping a new economy where collective
-                  foresight funds discovery.
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          {/* <div className="flex justify-center">
-            <GradientButton variant="variant" className="flex items-center">
-              <a href="https://tally.so/r/mR41VP" target="_blank">
-                Join as trader
-              </a>
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </GradientButton>
-          </div> */}
-        </div>
-      </section>
+      {/* Roadmap Section */}
+      <RoadmapSection />
 
       {/* FAQ Section */}
-      <section className="relative py-24">
+      {/* <section className="relative py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-normal mb-12 tracking-tight">FAQ</h2>
           <div className="space-y-4">
@@ -402,7 +124,7 @@ const Index = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="relative border-t border-slate-800/50 py-8">

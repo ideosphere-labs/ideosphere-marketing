@@ -46,9 +46,9 @@ const traderFlows = [
 ];
 
 const traderMetrics = [
-  { label: "Trade", value: "Knowledge" },
-  { label: "Earn", value: "Rewards" },
-  { label: "Fund", value: "Research" },
+  { label: "Trade", value: "For Profit" },
+  { label: "Forecast", value: "For Influence" },
+  { label: "Crowdfund", value: "For Impact" },
 ];
 
 const palettes = {

@@ -81,8 +81,9 @@ const TraderIncentivesSection = () => {
             From Trading To Forecasting To Funding
           </h2>
           <p className="text-lg text-slate-400">
-            Your market participation creates signals that surface breakthrough
-            research and helps allocate funding efficiently.
+            Every market action becomes a forecast. Every forecast becomes a
+            signal. And those signals steer real capital toward breakthrough
+            research.
           </p>
         </div>
 
